@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Philips Part Numbering Reference</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#f4f7fb; --panel:#ffffff; --ink:#0f2033; --ink2:#3a4d63;
+    --soft:#6b7d92; --line:#e1e8f0; --line2:#cdd8e5;
+    --brand:#1266d4; --brand-d:#0b4ea8; --brand-bg:#e8f1fd;
+    --accent:#0a7d8c; --accent-bg:#e2f4f6;
+    --mono:'IBM Plex Mono',ui-monospace,Menlo,Consolas,monospace;
+    --sans:'IBM Plex Sans',system-ui,-apple-system,'Segoe UI',Arial,sans-serif;
+    --w1:132px; --w2:92px; --w3:auto; --w4:150px; --w5:230px;
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:14.5px;line-height:1.5}
+  a{color:var(--brand)}
+  .wrap{max-width:1500px;margin:0 auto;padding:0 22px}
+
+  /* ── Header & masthead ──────────────────────────────────── */
+  header{padding:28px 0 0}
+  .masthead{display:flex;justify-content:space-between;align-items:flex-end;
+    gap:24px;flex-wrap:wrap;padding-bottom:14px}
+  h1{font-family:var(--sans);font-weight:600;font-size:27px;letter-spacing:-.3px;
+    margin:0 0 5px;color:var(--ink)}
+  h1 .nc{font-family:var(--mono);font-weight:600;background:var(--brand);color:#fff;
+    padding:2px 10px;border-radius:6px;font-size:23px}
+  .sub{color:var(--soft);font-size:13.5px;max-width:64ch}
+  .docref{font-family:var(--mono);font-size:11.5px;color:var(--soft);text-align:right;line-height:1.8}
+  .docref b{color:var(--ink2);font-weight:600}
+
+  /* ── Tab bar ────────────────────────────────────────────── */
+  .tab-bar{display:flex;gap:0;border-bottom:2px solid var(--line2)}
+  .tab-btn{font-family:var(--sans);font-size:13.5px;font-weight:500;padding:10px 22px;
+    border:none;background:none;cursor:pointer;color:var(--soft);
+    border-bottom:3px solid transparent;margin-bottom:-2px;
+    transition:color .12s,border-color .12s}
+  .tab-btn:hover{color:var(--ink)}
+  .tab-btn.active{color:var(--brand);border-bottom-color:var(--brand);font-weight:600}
+  .tab-panel{display:none}
+  .tab-panel.active{display:block}
+
+  /* ── Per-tab intro strip ────────────────────────────────── */
+  .tab-intro{padding:16px 0 4px;display:flex;justify-content:space-between;
+    align-items:flex-start;gap:24px;flex-wrap:wrap}
+
+  /* ── 12NC shape visualizer ──────────────────────────────── */
+  .shape{margin:14px 0 2px;font-family:var(--mono);font-size:19px;letter-spacing:2px;
+    color:var(--line2);user-select:none;font-weight:600}
+  .shape .d.on{color:var(--brand)}
+  .shape .sep{color:var(--line2);margin:0 3px}
+  .shapecap{font-family:var(--sans);font-size:12px;color:var(--soft);letter-spacing:0;
+    margin-left:14px;font-weight:400}
+
+  /* ── Sticky controls (12NC) ─────────────────────────────── */
+  .controls{position:sticky;top:0;background:var(--bg);padding:12px 0 10px;z-index:30;
+    border-bottom:1px solid var(--line)}
+  .searchrow{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+  input[type=search]{flex:1;min-width:260px;font-family:var(--mono);font-size:14px;
+    padding:11px 14px;border:1px solid var(--line2);background:var(--panel);color:var(--ink);
+    border-radius:9px}
+  input[type=search]::placeholder{color:#9fb0c2}
+  input[type=search]:focus{outline:none;border-color:var(--brand);box-shadow:0 0 0 3px var(--brand-bg)}
+  .count{font-family:var(--mono);font-size:12.5px;color:var(--soft);white-space:nowrap}
+  .filtergrid{margin-top:10px;display:flex;flex-direction:column;gap:7px}
+  .frow{display:flex;align-items:flex-start;gap:14px}
+  .fcol{flex:0 0 232px;font-family:var(--mono);font-size:11px;letter-spacing:.3px;
+    color:var(--ink2);font-weight:600;text-transform:uppercase;padding-top:7px;
+    text-align:right;border-right:2px solid var(--line2);padding-right:14px;line-height:1.35}
+  .fbtns{display:flex;flex-wrap:wrap;gap:8px;align-items:center;flex:1;min-width:0}
+  .fnote{font-size:11.5px;color:var(--soft);font-style:italic;align-self:center;
+    max-width:52ch;line-height:1.35}
+  .chip{font-size:12.5px;padding:6px 13px;cursor:pointer;border:1px solid var(--line2);
+    background:var(--panel);color:var(--ink2);user-select:none;border-radius:20px;transition:all .12s}
+  .chip:hover{border-color:var(--brand);color:var(--brand)}
+  .chip[aria-pressed=true]{background:var(--brand);color:#fff;border-color:var(--brand)}
+  .chip.accent[aria-pressed=true]{background:var(--accent);border-color:var(--accent)}
+
+  /* ── Sticky controls (product codes) ───────────────────── */
+  .controls-simple{position:sticky;top:0;background:var(--bg);padding:12px 0 10px;z-index:30;
+    border-bottom:1px solid var(--line)}
+
+  /* ── Card & table (shared) ──────────────────────────────── */
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:12px;
+    margin-top:14px;overflow:visible;box-shadow:0 1px 2px rgba(15,32,51,.04)}
+  .tablescroll{overflow:visible}
+  table{width:100%;border-collapse:separate;border-spacing:0;font-size:13.5px;table-layout:fixed}
+  colgroup .c1{width:var(--w1)} colgroup .c2{width:var(--w2)}
+  colgroup .c4{width:var(--w4)} colgroup .c5{width:var(--w5)}
+  thead th{position:sticky;top:var(--cth,120px);z-index:10;text-align:left;font-size:10.5px;
+    letter-spacing:.5px;text-transform:uppercase;color:var(--soft);font-weight:600;
+    padding:13px 14px;background:#eef3f9;border-bottom:1px solid var(--line2);white-space:nowrap}
+  thead th.num{text-align:center;white-space:normal;line-height:1.25}
+  tbody td{padding:12px 14px;border-bottom:1px solid var(--line);vertical-align:top}
+  tbody tr:last-child td{border-bottom:none}
+  tbody tr:hover{background:#f7fafd}
+  .code{font-family:var(--mono);font-weight:600;font-size:14px;letter-spacing:.5px;
+    white-space:nowrap;color:var(--ink)}
+  .code .g{color:var(--line2)} .code .p{color:var(--brand)}
+  .num{font-family:var(--mono);font-size:14px;font-weight:600;text-align:center;color:var(--ink)}
+  .num .g{color:var(--line2);font-weight:500}
+  .assign{font-size:13px;color:var(--ink2);line-height:1.45}
+  .meta{font-size:12.5px;color:var(--soft)}
+  .note{font-size:12px;color:var(--ink2);background:var(--brand-bg);padding:8px 11px;
+    border-radius:8px;line-height:1.45}
+  .note a{font-size:11px;display:inline-block;margin-top:4px;font-weight:500}
+  .empty{color:var(--line2)}
+  .noresult{padding:48px;text-align:center;color:var(--soft);font-family:var(--mono)}
+
+  /* ── Product-codes table specifics ─────────────────────── */
+  .pc-group-row td{background:#eef3f9;font-size:10.5px;letter-spacing:.8px;
+    text-transform:uppercase;font-weight:600;color:var(--soft);
+    padding:10px 14px;border-bottom:1px solid var(--line2)}
+  .pc-code{font-family:var(--mono);font-weight:700;font-size:15px;color:var(--brand)}
+  .pc-meaning{font-size:13.5px;color:var(--ink2)}
+  .pc-note{font-size:12px;color:var(--ink2);background:var(--brand-bg);
+    padding:8px 11px;border-radius:8px;line-height:1.5}
+
+  /* ── Split layout ────────────────────────────────────── */
+  .pc-layout{display:flex;gap:32px;align-items:flex-start;margin-top:4px}
+  .pc-left{flex:0 0 46%;min-width:0}
+  .pc-right{flex:1;min-width:0}
+  @media(max-width:1100px){
+    .pc-layout{flex-direction:column}
+    .pc-left,.pc-right{flex:none;width:100%}
+  }
+
+  /* ── Product-codes example card ─────────────────────── */
+  .pc-example{background:var(--panel);border:1px solid var(--line);border-radius:12px;
+    padding:20px 24px;margin:16px 0 4px;box-shadow:0 1px 2px rgba(15,32,51,.04)}
+  .pc-ex-head{font-size:10.5px;letter-spacing:.8px;text-transform:uppercase;
+    font-weight:600;color:var(--soft);margin-bottom:16px}
+  .pc-ex-body{display:flex;gap:32px;align-items:flex-start;flex-wrap:wrap}
+  .pc-ex-img-wrap{flex:0 0 140px;width:140px;min-width:140px;max-width:140px;overflow:hidden;border-radius:8px;border:1px solid var(--line2)}
+  .pc-ex-img{width:100%;display:block;object-fit:cover}
+  .pc-ex-segs-col{flex:none;display:flex;flex-direction:column;gap:10px}
+  .pc-ex-model{font-family:var(--mono);font-size:26px;font-weight:700;
+    letter-spacing:4px;color:var(--ink);line-height:1}
+  .pc-ex-segs{display:flex;gap:4px;flex-wrap:nowrap;align-items:flex-start}
+  .pc-ex-seg{display:flex;flex-direction:column;align-items:center;
+    border-top:3px solid var(--sc,#888);padding:7px 10px 9px;
+    background:rgba(0,0,0,.025);border-radius:0 0 8px 8px;min-width:54px}
+  .pc-ex-char{font-family:var(--mono);font-size:19px;font-weight:700;
+    color:var(--sc,#888);letter-spacing:1px;margin-bottom:7px}
+  .pc-ex-info{display:flex;flex-direction:column;align-items:center;
+    gap:2px;text-align:center}
+  .pc-ex-pos{font-size:8.5px;letter-spacing:.5px;text-transform:uppercase;
+    color:var(--soft);font-weight:600}
+  .pc-ex-enc{font-size:10px;color:var(--ink2);font-weight:500}
+  .pc-ex-val{font-size:11px;color:var(--ink);font-weight:600;margin-top:1px}
+  .pc-ex-specs{border-collapse:collapse;font-size:13px;flex:none;min-width:260px}
+  .pc-ex-specs td{padding:5px 12px 5px 0;border-bottom:1px solid var(--line);vertical-align:top}
+  .pc-ex-specs tr:last-child td{border-bottom:none}
+  .spec-label{font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:.5px;
+    color:var(--soft);white-space:nowrap;padding-right:18px;padding-top:7px}
+  .spec-val{color:var(--ink2);line-height:1.45}
+  @media(max-width:900px){
+    .pc-ex-img-wrap{flex:0 0 100%;width:100%;max-width:340px}
+    .pc-ex-model{font-size:26px;letter-spacing:3px}
+  }
+
+  footer{margin:26px 0 60px;font-size:12.5px;color:var(--soft);line-height:1.6}
+  footer b{color:var(--ink2)}
+
+  @media(max-width:900px){
+    h1{font-size:22px}.docref{text-align:left}
+    table{table-layout:auto}
+    thead{display:none}
+    table,tbody,tr,td{display:block;width:100%}
+    tbody tr{border:1px solid var(--line2);border-radius:10px;margin-bottom:12px;padding:6px 2px}
+    tbody td{border:none;padding:6px 12px}
+    tbody td::before{content:attr(data-l);font-size:10px;letter-spacing:.8px;
+      text-transform:uppercase;color:var(--soft);display:block;margin-bottom:3px;font-weight:600}
+    .num{text-align:left}
+    .tablescroll{max-height:none;overflow:visible}
+    .frow{flex-direction:column;gap:6px}
+    .fcol{flex:none;text-align:left;border-right:none;border-left:2px solid var(--line2);
+      padding-right:0;padding-left:10px;padding-top:0}
+    .pc-group-row td{display:block}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <div class="masthead">
+      <div>
+        <h1>Philips Part Numbering <span class="nc">Reference</span></h1>
+        <div class="sub">Historical coding systems used by Philips &mdash; from the pre-12NC
+          product codes to the 12-digit numbering standard introduced in 1964.</div>
+      </div>
+    </div>
+    <div class="tab-bar">
+      <button class="tab-btn active" id="btn-12nc" onclick="switchTab('12nc')">12NC Group Codes</button>
+      <button class="tab-btn" id="btn-product" onclick="switchTab('product')">Pre-12NC Product Codes</button>
+    </div>
+  </header>
+
+  <!-- ══ TAB: 12NC GROUP CODES ══════════════════════════════════════ -->
+  <div id="tab-12nc" class="tab-panel active">
+
+    <div class="tab-intro">
+      <div class="sub">A reference for the leading digits of the Philips 12-digit numbering
+        code &mdash; main group, centre of issue, and subgroup &mdash; merged from the concern
+        standardization records and cross-checked against parts seen in use.</div>
+      <div class="docref">SOURCES<br>
+        <b>UCB 22-00-74/1</b> &middot; May 1964<br>
+        <b>UT-D 1056 pt.3</b> &middot; Oct 1968<br>
+        <span style="color:var(--line2)">Philips Concern Standardization Dept.</span>
+      </div>
+    </div>
+
+    <div class="shape" id="shape">
+      <span class="d" data-i="0">N</span><span class="d" data-i="1">N</span><span class="d" data-i="2">N</span><span class="d" data-i="3">N</span><span class="sep">&middot;</span><span class="d" data-i="4">N</span><span class="d" data-i="5">N</span><span class="d" data-i="6">N</span><span class="sep">&middot;</span><span class="d" data-i="7">N</span><span class="d" data-i="8">N</span><span class="d" data-i="9">N</span><span class="d" data-i="10">N</span><span class="d" data-i="11">N</span>
+      <span class="shapecap" id="shapecap">every row highlights the positions it defines</span>
+    </div>
+
+    <div class="controls" id="ctrl-12nc">
+      <div class="searchrow">
+        <input type="search" id="q" placeholder="Search anything &mdash; code, keyword, country, ASML, Krefeld, resistors&hellip;" autocomplete="off">
+        <span class="count" id="count"></span>
+      </div>
+      <div class="filtergrid">
+        <div class="frow">
+          <span class="fcol">MAIN GROUP</span>
+          <div class="fbtns" id="mainFilters"></div>
+        </div>
+        <div class="frow">
+          <span class="fcol">ASSIGNMENT &middot; UT-D 1056 PT.3 (1968)</span>
+          <div class="fbtns">
+            <span class="chip accent" id="fCountry" aria-pressed="false" role="button" tabindex="0">Baseline of Centre of Issue</span>
+            <span class="fnote">Gives the Centre of Issue Baseline published on UT-D 1056 PT.3 (1968) &mdash; the raw 1968 country list.</span>
+          </div>
+        </div>
+        <div class="frow">
+          <span class="fcol">AUTHOR NOTE</span>
+          <div class="fbtns">
+            <span class="chip" id="fNotes" aria-pressed="false" role="button" tabindex="0">Has author note</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="tablescroll">
+        <table>
+          <colgroup>
+            <col class="c1"><col class="c2"><col class="c2"><col class="c2">
+            <col class="c3"><col class="c3"><col class="c4"><col class="c4"><col class="c5">
+          </colgroup>
+          <thead><tr>
+            <th>12NC BASELINE</th>
+            <th class="num">DIGITS 1-2</th>
+            <th class="num">DIGITS 3-4</th>
+            <th class="num">DIGITS 5-6</th>
+            <th>ASSIGNMENT &middot; UCB 22-00-74/1 (1964)</th>
+            <th>ASSIGNMENT &middot; UT-D 1056 PT.3 (1968)</th>
+            <th>MAIN GROUP</th>
+            <th>CENTRE ISSUE</th>
+            <th>AUTHOR NOTE</th>
+          </tr></thead>
+          <tbody id="tb"></tbody>
+        </table>
+        <div class="noresult" id="noresult" hidden>No codes match those filters.</div>
+      </div>
+    </div>
+
+    <footer>
+      <b>How to read this.</b> The 12NC&rsquo;s first two digits are the main product group; digits
+      3&ndash;4 the centre of issue (often a country); digits 5&ndash;6 can add a subgroup. The two
+      assignment columns quote the 1964 and 1968 standards so they can be read side by side &mdash;
+      much of the 1968 wording refines rather than replaces the 1964 meaning. Assignments are
+      quoted for research and reference; primary documents courtesy of the <b>Philips Company
+      Archives</b>. Author notes are the author&rsquo;s own observations from parts seen in use,
+      not archival statements. A working reconstruction &mdash; corrections welcome.
+    </footer>
+
+  </div><!-- /tab-12nc -->
+
+  <!-- ══ TAB: PRE-12NC PRODUCT CODES ═══════════════════════════════ -->
+  <div id="tab-product" class="tab-panel">
+
+    <div class="tab-intro">
+      <div class="sub">The alphanumeric coding system Philips used for consumer electronics
+        before the 12NC &mdash; letters encode product type, production origin, and power supply;
+        a digit indicates price class; a two-digit group usually gives the year.</div>
+      <div class="docref">SOURCE<br>
+        <b>Philips Consumer Electronics</b><br>
+        <span style="color:var(--line2)">Pre-1964 product coding</span>
+      </div>
+    </div>
+
+    <div class="pc-layout">
+    <div class="pc-left">
+    <div class="pc-example">
+      <div class="pc-ex-head">Example &mdash; decoding a product code</div>
+      <div class="pc-ex-body">
+        <div class="pc-ex-img-wrap"><img src="BX321A-10.jpg" class="pc-ex-img" alt="Philips BX321A/10 tabletop radio"/></div>
+        <div class="pc-ex-segs-col">
+          <div class="pc-ex-model">BX321A/10</div>
+          <div class="pc-ex-segs">
+            <div class="pc-ex-seg" style="--sc:#1266d4">
+              <div class="pc-ex-char">B</div>
+              <div class="pc-ex-info">
+                <span class="pc-ex-pos">First Letter</span>
+                <span class="pc-ex-enc">Product Type</span>
+                <span class="pc-ex-val">Tabletop</span>
+              </div>
+            </div>
+            <div class="pc-ex-seg" style="--sc:#0a7d8c">
+              <div class="pc-ex-char">X</div>
+              <div class="pc-ex-info">
+                <span class="pc-ex-pos">Second Letter</span>
+                <span class="pc-ex-enc">Production Origin</span>
+                <span class="pc-ex-val">Netherlands / Belgium</span>
+              </div>
+            </div>
+            <div class="pc-ex-seg" style="--sc:#7048d4">
+              <div class="pc-ex-char">3</div>
+              <div class="pc-ex-info">
+                <span class="pc-ex-pos">First Digit</span>
+                <span class="pc-ex-enc">Price Class</span>
+                <span class="pc-ex-val">Standard Salon-Radio</span>
+              </div>
+            </div>
+            <div class="pc-ex-seg" style="--sc:#b8660a">
+              <div class="pc-ex-char">21</div>
+              <div class="pc-ex-info">
+                <span class="pc-ex-pos">Digit Group</span>
+                <span class="pc-ex-enc">Model Year</span>
+                <span class="pc-ex-val">Usually the Year</span>
+              </div>
+            </div>
+            <div class="pc-ex-seg" style="--sc:#b03030">
+              <div class="pc-ex-char">A</div>
+              <div class="pc-ex-info">
+                <span class="pc-ex-pos">Third Letter</span>
+                <span class="pc-ex-enc">Power Supply</span>
+                <span class="pc-ex-val">Mains, AC only</span>
+              </div>
+            </div>
+          </div>
+        </div><!-- /pc-ex-segs-col -->
+        <table class="pc-ex-specs">
+            <tbody>
+              <tr>
+                <td class="spec-label">Production</td>
+                <td class="spec-val">The Netherlands, 1953</td>
+              </tr>
+              <tr>
+                <td class="spec-label">Price</td>
+                <td class="spec-val">210 guilders</td>
+              </tr>
+              <tr>
+                <td class="spec-label">Bands</td>
+                <td class="spec-val">LW (1053&ndash;1974 m), MW (185&ndash;580 m), SW (16.5&ndash;50.7 m); IF 452 kHz</td>
+              </tr>
+              <tr>
+                <td class="spec-label">Tubes</td>
+                <td class="spec-val">ECH81, EBF80, EBC41, EL84, AZ41; dial light 8045D-00</td>
+              </tr>
+              <tr>
+                <td class="spec-label">Cabinet</td>
+                <td class="spec-val">Bakelite &mdash; 39 &times; 27 &times; 19 cm, 6 kg</td>
+              </tr>
+              <tr>
+                <td class="spec-label">Power</td>
+                <td class="spec-val">AC, 45 W</td>
+              </tr>
+            </tbody>
+          </table>
+      </div>
+    </div>
+
+    </div><!-- /pc-left -->
+    <div class="pc-right">
+    <div class="controls-simple" id="ctrl-product">
+      <div class="searchrow">
+        <input type="search" id="pc-q" placeholder="Search code, position, meaning&hellip;" autocomplete="off">
+        <span class="count" id="pc-count"></span>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="tablescroll">
+        <table style="table-layout:auto">
+          <colgroup>
+            <col style="width:72px"><col>
+          </colgroup>
+          <thead><tr>
+            <th>CODE</th>
+            <th>MEANING</th>
+          </tr></thead>
+          <tbody id="pc-tb"></tbody>
+        </table>
+        <div class="noresult" id="pc-noresult" hidden>No codes match.</div>
+      </div>
+    </div>
+    </div><!-- /pc-right -->
+    </div><!-- /pc-layout -->
+
+    <footer>
+      <b>How to read this.</b> A typical pre-12NC product code looks like <b>TX3</b> or <b>BX5/25</b>.
+      The first letter gives the product type; the second the production origin; the third the power
+      supply; the digit a price class. An optional slash-suffix can denote development centre, market,
+      or a technical modification &mdash; its meaning varied by product line.
+      Author notes are the author&rsquo;s own observations, not archival statements.
+    </footer>
+
+  </div><!-- /tab-product -->
+
+</div><!-- /wrap -->
+
+<script>
+// ── Shared CSV helpers ──────────────────────────────────────────────
+let DATA=[];
+let PC_DATA=[];
+
+function splitCSVLine(line){
+  const out=[];let f='',q=false;
+  for(let i=0;i<line.length;i++){
+    const c=line[i];
+    if(q){if(c==='"'&&line[i+1]==='"'){f+='"';i++;}else if(c==='"'){q=false;}else{f+=c;}}
+    else{if(c==='"'){q=true;}else if(c===','){out.push(f);f='';}else{f+=c;}}
+  }
+  out.push(f);return out;
+}
+function parseCSV(text){
+  const lines=text.trim().split(/\r?\n/);
+  return lines.slice(1).map(line=>{
+    const c=splitCSVLine(line);
+    return{id:+c[0],depth:+c[1],active:c[2]?c[2].split('|').map(Number):[],
+      code:c[3],nnMain:c[4],nnCentre:c[5],nnSub:c[6],baseline:c[7],
+      main:c[8],centre:c[9],a64:c[10],a68:c[11],note:c[12],ref:c[13],
+      isCountry:c[14]==='true'};
+  });
+}
+function parseProductCSV(text){
+  const lines=text.trim().split(/\r?\n/);
+  return lines.slice(1).map(line=>{
+    const c=splitCSVLine(line);
+    return{code:c[0],position:c[1],encodes:c[2],meaning:c[3],note:c[4]||''};
+  });
+}
+
+// ── Tab switching ───────────────────────────────────────────────────
+function switchTab(id){
+  document.querySelectorAll('.tab-panel').forEach(p=>p.classList.toggle('active',p.id==='tab-'+id));
+  document.querySelectorAll('.tab-btn').forEach(b=>b.classList.toggle('active',b.id==='btn-'+id));
+  syncStickyTop();
+}
+
+// ── Init: fetch both CSVs in parallel ──────────────────────────────
+async function init(){
+  const [r1,r2]=await Promise.all([
+    fetch('12nc_matrix.csv'),
+    fetch('product_codes_matrix.csv')
+  ]);
+  if(!r1.ok)throw new Error('Failed to load 12nc_matrix.csv: '+r1.status);
+  if(!r2.ok)throw new Error('Failed to load product_codes_matrix.csv: '+r2.status);
+  DATA=parseCSV(await r1.text());
+  PC_DATA=parseProductCSV(await r2.text());
+  render();
+  renderPC();
+}
+
+// ── 12NC table ──────────────────────────────────────────────────────
+const MAINS=['Articles and Sketches','Articles for Works-Mechanization','Articles in General Use','Commercial Products','Materials','Production Articles'];
+const state={q:'',main:null,country:false,notes:false};
+
+const mf=document.getElementById('mainFilters');
+MAINS.forEach(m=>{
+  const c=document.createElement('span');
+  c.className='chip';c.textContent=m;c.setAttribute('role','button');
+  c.setAttribute('tabindex','0');c.setAttribute('aria-pressed','false');
+  c.onclick=()=>{state.main=state.main===m?null:m;
+    [...mf.querySelectorAll('.chip')].forEach(x=>x.setAttribute('aria-pressed',x.textContent===state.main));
+    render();};
+  c.onkeydown=e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();c.click();}};
+  mf.appendChild(c);
+});
+
+function esc(s){return (s||'').replace(/[&<>]/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[m]));}
+
+function codeShape(d){
+  const bare=(d.baseline||'').replace(/[^0-9N]/g,'');
+  let h='';
+  for(let i=0;i<12;i++){
+    const ch=bare[i]||'N',pinned=d.active.includes(i);
+    if(i===4||i===7)h+=' ';
+    h+='<span class="'+(pinned?'p':'g')+'">'+ch+'</span>';
+  }
+  return h;
+}
+function nn(v){return v?'<span>'+esc(v)+'</span>':'<span class="g">NN</span>';}
+function ass(v){return v?esc(v):'<span class="empty">&mdash;</span>';}
+
+function match(d){
+  if(state.country&&!d.isCountry)return false;
+  if(state.main&&d.main!==state.main)return false;
+  if(state.notes&&!d.note)return false;
+  if(state.q){
+    const q=state.q.toLowerCase();
+    const hay=[d.code,d.baseline,d.nnMain,d.nnCentre,d.nnSub,d.main,d.centre,d.a64,d.a68,d.note].join(' ').toLowerCase();
+    if(!hay.includes(q))return false;
+  }
+  return true;
+}
+function updateShape(rows){
+  const u=new Set();rows.forEach(d=>d.active.forEach(i=>u.add(i)));
+  document.querySelectorAll('#shape .d').forEach(el=>el.classList.toggle('on',u.has(+el.dataset.i)));
+  const cap=document.getElementById('shapecap');
+  cap.textContent=(!state.main&&!state.q&&!state.country&&!state.notes)
+    ?'every row highlights the positions it defines'
+    :'highlighted: positions defined by the current selection';
+}
+function render(){
+  const rows=DATA.filter(match);
+  document.getElementById('noresult').hidden=rows.length>0;
+  document.getElementById('tb').innerHTML=rows.map(d=>{
+    let note='';
+    if(d.note){note='<span class="note">'+esc(d.note);
+      if(d.ref)note+='<br><a href="'+esc(d.ref)+'" target="_blank" rel="noopener">source &#8599;</a>';
+      note+='</span>';}
+    return '<tr>'
+     +'<td class="code" data-l="12NC BASELINE">'+codeShape(d)+'</td>'
+     +'<td class="num" data-l="DIGITS 1-2">'+nn(d.nnMain)+'</td>'
+     +'<td class="num" data-l="DIGITS 3-4">'+nn(d.nnCentre)+'</td>'
+     +'<td class="num" data-l="DIGITS 5-6">'+nn(d.nnSub)+'</td>'
+     +'<td class="assign" data-l="ASSIGNMENT 1964">'+ass(d.a64)+'</td>'
+     +'<td class="assign" data-l="ASSIGNMENT 1968">'+ass(d.a68)+'</td>'
+     +'<td class="meta" data-l="MAIN GROUP">'+(d.main?esc(d.main):'<span class="empty">&mdash;</span>')+'</td>'
+     +'<td class="meta" data-l="CENTRE ISSUE">'+(d.centre?esc(d.centre):'<span class="empty">&mdash;</span>')+'</td>'
+     +'<td data-l="AUTHOR NOTE">'+note+'</td>'
+     +'</tr>';
+  }).join('');
+  document.getElementById('count').textContent=rows.length+' of '+DATA.length+' codes';
+  updateShape(rows);
+}
+function toggle(id,key){
+  const el=document.getElementById(id);
+  el.onclick=()=>{state[key]=!state[key];el.setAttribute('aria-pressed',state[key]);render();};
+  el.onkeydown=e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();el.click();}};
+}
+toggle('fCountry','country');
+toggle('fNotes','notes');
+document.getElementById('q').addEventListener('input',e=>{state.q=e.target.value.trim();render();});
+
+// ── Product codes table ─────────────────────────────────────────────
+const pcState={q:''};
+const PC_ORDER=['First Letter','Second Letter','Third Letter','First Digit','Digit Group','Suffix'];
+
+function renderPC(){
+  const q=pcState.q.toLowerCase();
+  const rows=PC_DATA.filter(d=>!q||[d.code,d.position,d.encodes,d.meaning,d.note].join(' ').toLowerCase().includes(q));
+  document.getElementById('pc-count').textContent=rows.length+' of '+PC_DATA.length+' codes';
+  document.getElementById('pc-noresult').hidden=rows.length>0;
+  const buckets=new Map();
+  PC_ORDER.forEach(p=>buckets.set(p,[]));
+  rows.forEach(d=>{
+    if(!buckets.has(d.position))buckets.set(d.position,[]);
+    buckets.get(d.position).push(d);
+  });
+  let html='';
+  buckets.forEach((items,pos)=>{
+    if(!items.length)return;
+    const label=pos+' · '+items[0].encodes;
+    html+='<tr class="pc-group-row"><td colspan="2">'+esc(label)+'</td></tr>';
+    items.forEach(d=>{
+      const meaning=d.note
+        ?esc(d.meaning)+'<br><span class="pc-note">'+esc(d.note)+'</span>'
+        :esc(d.meaning);
+      html+='<tr>'
+        +'<td class="pc-code" data-l="CODE">'+esc(d.code)+'</td>'
+        +'<td class="pc-meaning" data-l="MEANING">'+meaning+'</td>'
+        +'</tr>';
+    });
+  });
+  document.getElementById('pc-tb').innerHTML=html;
+}
+document.getElementById('pc-q').addEventListener('input',e=>{pcState.q=e.target.value.trim();renderPC();});
+
+// ── Sticky header height sync ───────────────────────────────────────
+function syncStickyTop(){
+  const active=document.querySelector('.tab-panel.active');
+  const ctrl=active&&(active.querySelector('.controls')||active.querySelector('.controls-simple'));
+  if(!ctrl)return;
+  const h=Math.round(ctrl.getBoundingClientRect().height);
+  document.documentElement.style.setProperty('--cth',h+'px');
+}
+window.addEventListener('resize',syncStickyTop);
+const _ro=new ResizeObserver(syncStickyTop);
+_ro.observe(document.getElementById('ctrl-12nc'));
+_ro.observe(document.getElementById('ctrl-product'));
+
+init();
+syncStickyTop();
+</script>
+</body>
+</html>
