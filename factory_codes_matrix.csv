@@ -1,0 +1,11 @@
+Code,Pattern,Country,Factory,Values,Note,Review
+KR,KR xxx yy,Germany,Krefeld,"xxx = 361, later 362 and 363",,"Slide states the xxx values once for ""KR xxx yy and HA xxx yy""; unclear whether they apply to KR, HA or both. Relative timing of KR vs HA not stated."
+HA,HA xxx yy,Germany,Krefeld,"xxx = 361, later 362 and 363","Although HA suggests Hamburg, the most likely solution was that this was the code of the (new) central coding centre, because production remained in Krefeld.","See KR: xxx values stated jointly for KR and HA."
+MK,MK xxx yy,United Kingdom,Mitcham,xxx = 892 initially,,Later xxx values not given.
+HY,,United Kingdom,Possibly Whiteleaf (near Croydon),,"Interestingly unfinished tuners without the valves received codes HY. This is possibly linked to the Whiteleaf factory, close to Croydon, which reportedly manufactured tuner modules but then apparently one assembled the modules, leaving the alignment and testing to Mitcham.",Code pattern not given on the slide. Factory attribution is tentative (“possibly”).
+FK,FK xx yyy,France,Suresnes,xx = 90 initially,Used for the first tuners produced in Suresnes.,Later xx values not given.
+FD,,France,Dreux,,Later code (after FK).,"Code pattern not given; may follow FK's ""xx yyy"" but the slide does not say. Start date not given."
+F 35,F 35 yyy,France,Not stated,From 1956 onwards,"From 1956 onwards the code becomes F 35 yyy, which suggests - like in Germany - the emergence of some central coding authority, with F the generic French indicator. Since around this time (1956) the French Rambouillet factory was opened and dedicated to component manufacturing including tuners, I wouldn't be surprised if the introduction of F 35 yyy coding was linked to production start in Rambouillet.","Unclear whether F 35 replaced FK, FD or both. Link to Rambouillet is the author's speculation."
+PK,PK xxx yy,Italy,Monza,,,No xxx values given.
+ZB,ZB A3 xxx yy,Spain,Barcelona,,Note that this factory used the different approach by simply putting ZB in front of the A3 code.,
+A3,A3 xxx yy,Netherlands,Eindhoven,,"Eindhoven factory code. The slide's example tuner carries A3 640 50 (Eindhoven) alongside HA 361 60 (German).","Not listed in the slide body; derived from the example header and the ZB A3 xxx yy entry. Pattern inferred from those two. Meaning of ""A3"" not explained."

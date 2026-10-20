@@ -21,28 +21,40 @@
   html{-webkit-text-size-adjust:100%}
   body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:14.5px;line-height:1.5}
   a{color:var(--brand)}
-  .wrap{max-width:1500px;margin:0 auto;padding:0 22px}
+  .wrap{padding:0 22px}
 
   /* ── Header & masthead ──────────────────────────────────── */
-  header{padding:28px 0 0}
-  .masthead{display:flex;justify-content:space-between;align-items:flex-end;
-    gap:24px;flex-wrap:wrap;padding-bottom:14px}
+  header{padding:20px 0 0}
+  .masthead{display:flex;align-items:center;gap:8px 20px;flex-wrap:wrap;
+    padding-bottom:14px;border-bottom:2px solid var(--line2)}
   h1{font-family:var(--sans);font-weight:600;font-size:27px;letter-spacing:-.3px;
-    margin:0 0 5px;color:var(--ink)}
+    margin:0;color:var(--ink);white-space:nowrap}
+  .masthead .sub{flex:1;min-width:280px;max-width:none;padding-left:20px;
+    border-left:2px solid var(--line2);line-height:1.45}
   h1 .nc{font-family:var(--mono);font-weight:600;background:var(--brand);color:#fff;
     padding:2px 10px;border-radius:6px;font-size:23px}
   .sub{color:var(--soft);font-size:13.5px;max-width:64ch}
   .docref{font-family:var(--mono);font-size:11.5px;color:var(--soft);text-align:right;line-height:1.8}
   .docref b{color:var(--ink2);font-weight:600}
 
-  /* ── Tab bar ────────────────────────────────────────────── */
-  .tab-bar{display:flex;gap:0;border-bottom:2px solid var(--line2)}
-  .tab-btn{font-family:var(--sans);font-size:13.5px;font-weight:500;padding:10px 22px;
-    border:none;background:none;cursor:pointer;color:var(--soft);
-    border-bottom:3px solid transparent;margin-bottom:-2px;
-    transition:color .12s,border-color .12s}
-  .tab-btn:hover{color:var(--ink)}
-  .tab-btn.active{color:var(--brand);border-bottom-color:var(--brand);font-weight:600}
+  /* ── Layout: vertical tab rail (left) + content ────────── */
+  .layout{display:grid;grid-template-columns:auto minmax(0,1fr);gap:20px;align-items:start}
+  .layout>main{grid-column:2;grid-row:1;min-width:0}
+  .tab-rail{grid-column:1;grid-row:1;position:sticky;top:16px;margin-top:16px;width:200px;
+    display:flex;flex-direction:column;padding:8px 0;background:var(--panel);
+    border:1px solid var(--line);border-radius:10px;box-shadow:0 1px 2px rgba(15,32,51,.04)}
+  .rail-cap{font-size:10.5px;letter-spacing:.8px;text-transform:uppercase;font-weight:600;
+    color:var(--soft);padding:4px 16px 8px}
+  .tab-btn{display:flex;align-items:center;gap:10px;width:100%;text-align:left;
+    font-family:var(--sans);font-size:13.5px;font-weight:500;line-height:1.3;
+    padding:10px 14px 10px 13px;cursor:pointer;border:none;border-left:3px solid transparent;
+    background:none;color:var(--ink2);transition:color .12s,background .12s,border-color .12s}
+  .tab-btn svg{flex:none;width:18px;height:18px;color:var(--soft)}
+  .tab-btn:hover{background:#f7fafd;color:var(--ink)}
+  .tab-btn:focus-visible{outline:none;box-shadow:inset 0 0 0 2px var(--brand-bg)}
+  .tab-btn.active{background:var(--brand-bg);border-left-color:var(--brand);
+    color:var(--brand-d);font-weight:600}
+  .tab-btn.active svg{color:var(--brand)}
   .tab-panel{display:none}
   .tab-panel.active{display:block}
 
@@ -51,32 +63,35 @@
     align-items:flex-start;gap:24px;flex-wrap:wrap}
 
   /* ── 12NC shape visualizer ──────────────────────────────── */
-  .shape{margin:14px 0 2px;font-family:var(--mono);font-size:19px;letter-spacing:2px;
+  .shape{flex:none;max-width:230px;margin-left:auto;text-align:right;display:flex;flex-direction:column;align-items:flex-end;
+    font-family:var(--mono);font-size:18px;letter-spacing:2px;line-height:1.15;
     color:var(--line2);user-select:none;font-weight:600}
   .shape .d.on{color:var(--brand)}
   .shape .sep{color:var(--line2);margin:0 3px}
-  .shapecap{font-family:var(--sans);font-size:12px;color:var(--soft);letter-spacing:0;
-    margin-left:14px;font-weight:400}
+  .shapecap{font-family:var(--sans);font-size:11px;color:var(--soft);letter-spacing:0;
+    font-weight:400;line-height:1.3}
 
   /* ── Sticky controls (12NC) ─────────────────────────────── */
-  .controls{position:sticky;top:0;background:var(--bg);padding:12px 0 10px;z-index:30;
+  .controls{position:sticky;top:0;background:var(--bg);padding:10px 0 8px;z-index:30;
     border-bottom:1px solid var(--line)}
   .searchrow{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+  #ctrl-12nc input[type=search]{padding:8px 12px;font-size:13.5px}
   input[type=search]{flex:1;min-width:260px;font-family:var(--mono);font-size:14px;
     padding:11px 14px;border:1px solid var(--line2);background:var(--panel);color:var(--ink);
     border-radius:9px}
   input[type=search]::placeholder{color:#9fb0c2}
   input[type=search]:focus{outline:none;border-color:var(--brand);box-shadow:0 0 0 3px var(--brand-bg)}
   .count{font-family:var(--mono);font-size:12.5px;color:var(--soft);white-space:nowrap}
-  .filtergrid{margin-top:10px;display:flex;flex-direction:column;gap:7px}
-  .frow{display:flex;align-items:flex-start;gap:14px}
-  .fcol{flex:0 0 232px;font-family:var(--mono);font-size:11px;letter-spacing:.3px;
-    color:var(--ink2);font-weight:600;text-transform:uppercase;padding-top:7px;
-    text-align:right;border-right:2px solid var(--line2);padding-right:14px;line-height:1.35}
-  .fbtns{display:flex;flex-wrap:wrap;gap:8px;align-items:center;flex:1;min-width:0}
-  .fnote{font-size:11.5px;color:var(--soft);font-style:italic;align-self:center;
-    max-width:52ch;line-height:1.35}
-  .chip{font-size:12.5px;padding:6px 13px;cursor:pointer;border:1px solid var(--line2);
+  .filterbar{margin-top:8px;display:flex;flex-wrap:wrap;align-items:center;gap:6px 14px}
+  .searchrow .fgroup{padding-left:12px;border-left:2px solid var(--line2)}
+  .fgroup{display:flex;flex-wrap:wrap;align-items:center;gap:6px}
+  .flabel{font-family:var(--mono);font-size:10.5px;letter-spacing:.3px;color:var(--ink2);
+    font-weight:600;text-transform:uppercase;white-space:nowrap;margin-right:2px}
+  .fbtns{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+  .finfo{display:inline-flex;align-items:center;justify-content:center;width:17px;height:17px;
+    border-radius:50%;border:1px solid var(--line2);font-size:10.5px;font-weight:600;
+    font-style:italic;font-family:Georgia,serif;color:var(--soft);cursor:help;background:var(--panel)}
+  .chip{font-size:12px;padding:4px 11px;cursor:pointer;border:1px solid var(--line2);
     background:var(--panel);color:var(--ink2);user-select:none;border-radius:20px;transition:all .12s}
   .chip:hover{border-color:var(--brand);color:var(--brand)}
   .chip[aria-pressed=true]{background:var(--brand);color:#fff;border-color:var(--brand)}
@@ -119,12 +134,13 @@
     padding:10px 14px;border-bottom:1px solid var(--line2)}
   .pc-code{font-family:var(--mono);font-weight:700;font-size:15px;color:var(--brand)}
   .pc-meaning{font-size:13.5px;color:var(--ink2)}
+  .fc-pattern{font-family:var(--mono);font-size:12.5px;color:var(--soft)}
   .pc-note{font-size:12px;color:var(--ink2);background:var(--brand-bg);
     padding:8px 11px;border-radius:8px;line-height:1.5}
 
   /* ── Split layout ────────────────────────────────────── */
   .pc-layout{display:flex;gap:32px;align-items:flex-start;margin-top:4px}
-  .pc-left{flex:0 0 46%;min-width:0}
+  .pc-left{flex:0 0 max(46%,620px);min-width:0}
   .pc-right{flex:1;min-width:0}
   @media(max-width:1100px){
     .pc-layout{flex-direction:column}
@@ -139,7 +155,7 @@
   .pc-ex-body{display:flex;gap:32px;align-items:flex-start;flex-wrap:wrap}
   .pc-ex-img-wrap{flex:0 0 140px;width:140px;min-width:140px;max-width:140px;overflow:hidden;border-radius:8px;border:1px solid var(--line2)}
   .pc-ex-img{width:100%;display:block;object-fit:cover}
-  .pc-ex-segs-col{flex:none;display:flex;flex-direction:column;gap:10px}
+  .pc-ex-segs-col{flex:0 0 100%;display:flex;flex-direction:column;gap:10px}
   .pc-ex-model{font-family:var(--mono);font-size:26px;font-weight:700;
     letter-spacing:4px;color:var(--ink);line-height:1}
   .pc-ex-segs{display:flex;gap:4px;flex-wrap:nowrap;align-items:flex-start}
@@ -168,6 +184,19 @@
   footer{margin:26px 0 60px;font-size:12.5px;color:var(--soft);line-height:1.6}
   footer b{color:var(--ink2)}
 
+  @media(max-width:1600px){
+    :root{--w1:124px;--w2:66px;--w4:112px;--w5:180px}
+  }
+
+  @media(max-width:1300px){
+    .layout{grid-template-columns:minmax(0,1fr);gap:0}
+    .layout>main,.tab-rail{grid-column:auto;grid-row:auto}
+    .tab-rail{position:static;flex-direction:row;width:auto;padding:0;overflow:hidden}
+    .rail-cap{display:none}
+    .tab-btn{flex:1;min-width:0;padding:10px 12px;border-left:none;border-bottom:3px solid transparent}
+    .tab-btn.active{border-bottom-color:var(--brand)}
+  }
+
   @media(max-width:900px){
     h1{font-size:22px}.docref{text-align:left}
     table{table-layout:auto}
@@ -179,9 +208,10 @@
       text-transform:uppercase;color:var(--soft);display:block;margin-bottom:3px;font-weight:600}
     .num{text-align:left}
     .tablescroll{max-height:none;overflow:visible}
-    .frow{flex-direction:column;gap:6px}
-    .fcol{flex:none;text-align:left;border-right:none;border-left:2px solid var(--line2);
-      padding-right:0;padding-left:10px;padding-top:0}
+    .masthead .sub{padding-left:0;border-left:none}
+    .shape{max-width:none;align-items:flex-start;text-align:left}
+    .searchrow .fgroup{padding-left:0;border-left:none}
+    .shape{margin-left:0}
     .pc-group-row td{display:block}
   }
 </style>
@@ -191,17 +221,26 @@
 
   <header>
     <div class="masthead">
-      <div>
-        <h1>Philips Part Numbering <span class="nc">Reference</span></h1>
-        <div class="sub">Historical coding systems used by Philips &mdash; from the pre-12NC
-          product codes to the 12-digit numbering standard introduced in 1964.</div>
-      </div>
-    </div>
-    <div class="tab-bar">
-      <button class="tab-btn active" id="btn-12nc" onclick="switchTab('12nc')">12NC Group Codes</button>
-      <button class="tab-btn" id="btn-product" onclick="switchTab('product')">Pre-12NC Product Codes</button>
+      <h1>Philips Part Numbering <span class="nc">Reference</span></h1>
+      <div class="sub">Historical coding systems used by Philips &mdash; from the pre-12NC
+        product codes to the 12-digit numbering standard introduced in 1964.</div>
     </div>
   </header>
+
+  <div class="layout">
+  <nav class="tab-rail" role="tablist" aria-label="Coding systems">
+    <div class="rail-cap">Coding systems</div>
+    <button class="tab-btn active" id="btn-12nc" role="tab" aria-selected="true" onclick="location.hash='12nc'">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M3 14.5h18M9 9v11"/></svg>
+      12NC Group Codes</button>
+    <button class="tab-btn" id="btn-product" role="tab" aria-selected="false" onclick="location.hash='product'">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7l7-4"/><circle cx="15.5" cy="13.5" r="3"/><path d="M6.5 11h3M6.5 14h3M6.5 17h3"/></svg>
+      Pre-12NC Product Codes</button>
+    <button class="tab-btn" id="btn-factory" role="tab" aria-selected="false" onclick="location.hash='factory'">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 20V10l5 3V10l5 3V10l5 3V4h3v16z"/><path d="M3 20h18"/></svg>
+      Pre-12NC Factory Codes</button>
+  </nav>
+  <main>
 
   <!-- ══ TAB: 12NC GROUP CODES ══════════════════════════════════════ -->
   <div id="tab-12nc" class="tab-panel active">
@@ -217,33 +256,28 @@
       </div>
     </div>
 
-    <div class="shape" id="shape">
-      <span class="d" data-i="0">N</span><span class="d" data-i="1">N</span><span class="d" data-i="2">N</span><span class="d" data-i="3">N</span><span class="sep">&middot;</span><span class="d" data-i="4">N</span><span class="d" data-i="5">N</span><span class="d" data-i="6">N</span><span class="sep">&middot;</span><span class="d" data-i="7">N</span><span class="d" data-i="8">N</span><span class="d" data-i="9">N</span><span class="d" data-i="10">N</span><span class="d" data-i="11">N</span>
-      <span class="shapecap" id="shapecap">every row highlights the positions it defines</span>
-    </div>
-
     <div class="controls" id="ctrl-12nc">
       <div class="searchrow">
         <input type="search" id="q" placeholder="Search anything &mdash; code, keyword, country, ASML, Krefeld, resistors&hellip;" autocomplete="off">
         <span class="count" id="count"></span>
+        <div class="fgroup">
+          <span class="flabel">UT-D 1056 pt.3 (1968)</span>
+          <span class="chip accent" id="fCountry" aria-pressed="false" role="button" tabindex="0">Baseline of Centre of Issue</span>
+          <span class="finfo" tabindex="0" title="Gives the Centre of Issue Baseline published on UT-D 1056 PT.3 (1968) &mdash; the raw 1968 country list." aria-label="Gives the Centre of Issue Baseline published on UT-D 1056 PT.3 (1968) &mdash; the raw 1968 country list.">i</span>
+        </div>
+        <div class="fgroup">
+          <span class="flabel">Author note</span>
+          <span class="chip" id="fNotes" aria-pressed="false" role="button" tabindex="0">Has author note</span>
+        </div>
       </div>
-      <div class="filtergrid">
-        <div class="frow">
-          <span class="fcol">MAIN GROUP</span>
+      <div class="filterbar">
+        <div class="fgroup">
+          <span class="flabel">Main group</span>
           <div class="fbtns" id="mainFilters"></div>
         </div>
-        <div class="frow">
-          <span class="fcol">ASSIGNMENT &middot; UT-D 1056 PT.3 (1968)</span>
-          <div class="fbtns">
-            <span class="chip accent" id="fCountry" aria-pressed="false" role="button" tabindex="0">Baseline of Centre of Issue</span>
-            <span class="fnote">Gives the Centre of Issue Baseline published on UT-D 1056 PT.3 (1968) &mdash; the raw 1968 country list.</span>
-          </div>
-        </div>
-        <div class="frow">
-          <span class="fcol">AUTHOR NOTE</span>
-          <div class="fbtns">
-            <span class="chip" id="fNotes" aria-pressed="false" role="button" tabindex="0">Has author note</span>
-          </div>
+        <div class="shape" id="shape">
+          <div><span class="d" data-i="0">N</span><span class="d" data-i="1">N</span><span class="d" data-i="2">N</span><span class="d" data-i="3">N</span><span class="sep">&middot;</span><span class="d" data-i="4">N</span><span class="d" data-i="5">N</span><span class="d" data-i="6">N</span><span class="sep">&middot;</span><span class="d" data-i="7">N</span><span class="d" data-i="8">N</span><span class="d" data-i="9">N</span><span class="d" data-i="10">N</span><span class="d" data-i="11">N</span></div>
+          <span class="shapecap" id="shapecap">every row highlights the positions it defines</span>
         </div>
       </div>
     </div>
@@ -293,7 +327,7 @@
         a digit indicates price class; a two-digit group usually gives the year.</div>
       <div class="docref">SOURCE<br>
         <b>Philips Consumer Electronics</b><br>
-        <span style="color:var(--line2)">Pre-1964 product coding</span>
+        <span style="color:var(--line2)">Pre-12NC product coding</span>
       </div>
     </div>
 
@@ -416,12 +450,116 @@
 
   </div><!-- /tab-product -->
 
+  <!-- ══ TAB: PRE-12NC FACTORY CODES ═══════════════════════════════ -->
+  <div id="tab-factory" class="tab-panel">
+
+    <div class="tab-intro">
+      <div class="sub">Before the 12NC, Philips factories identified the parts they made &mdash; such as
+        tuner units &mdash; with their own factory codes: a letter prefix for the factory followed by
+        number groups. The same part could carry a different code depending on where it was made.</div>
+      <div class="docref">SOURCE<br>
+        <b>Author&rsquo;s factory-code notes</b><br>
+        <span style="color:var(--line2)">Pre-12NC factory coding</span>
+      </div>
+    </div>
+
+    <div class="pc-layout">
+    <div class="pc-left">
+    <div class="pc-example">
+      <div class="pc-ex-head">Example &mdash; decoding a factory code</div>
+      <div class="pc-ex-body">
+        <div class="pc-ex-img-wrap"><img src="HA_3621_30.jpg" class="pc-ex-img" alt="Philips tuner unit coded HA 361 60"/></div>
+        <div class="pc-ex-segs-col">
+          <div class="pc-ex-model">HA 361 60</div>
+          <div class="pc-ex-segs">
+            <div class="pc-ex-seg" style="--sc:#1266d4">
+              <div class="pc-ex-char">HA</div>
+              <div class="pc-ex-info">
+                <span class="pc-ex-pos">Prefix</span>
+                <span class="pc-ex-enc">Factory</span>
+                <span class="pc-ex-val">Krefeld, Germany</span>
+              </div>
+            </div>
+            <div class="pc-ex-seg" style="--sc:#0a7d8c">
+              <div class="pc-ex-char">361</div>
+              <div class="pc-ex-info">
+                <span class="pc-ex-pos">xxx</span>
+                <span class="pc-ex-enc">Number Group</span>
+                <span class="pc-ex-val">361, later 362 / 363</span>
+              </div>
+            </div>
+            <div class="pc-ex-seg" style="--sc:#7048d4">
+              <div class="pc-ex-char">60</div>
+              <div class="pc-ex-info">
+                <span class="pc-ex-pos">yy</span>
+                <span class="pc-ex-enc">Not explained</span>
+                <span class="pc-ex-val">&mdash;</span>
+              </div>
+            </div>
+          </div>
+        </div><!-- /pc-ex-segs-col -->
+        <table class="pc-ex-specs">
+            <tbody>
+              <tr>
+                <td class="spec-label">German code</td>
+                <td class="spec-val">HA 361 60</td>
+              </tr>
+              <tr>
+                <td class="spec-label">Eindhoven code</td>
+                <td class="spec-val">A3 640 50</td>
+              </tr>
+            </tbody>
+          </table>
+      </div>
+    </div>
+
+    </div><!-- /pc-left -->
+    <div class="pc-right">
+    <div class="controls-simple" id="ctrl-factory">
+      <div class="searchrow">
+        <input type="search" id="fc-q" placeholder="Search code, country, factory&hellip;" autocomplete="off">
+        <span class="count" id="fc-count"></span>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="tablescroll">
+        <table style="table-layout:auto">
+          <colgroup>
+            <col style="width:72px"><col>
+          </colgroup>
+          <thead><tr>
+            <th>CODE</th>
+            <th>FACTORY</th>
+          </tr></thead>
+          <tbody id="fc-tb"></tbody>
+        </table>
+        <div class="noresult" id="fc-noresult" hidden>No codes match.</div>
+      </div>
+    </div>
+    </div><!-- /pc-right -->
+    </div><!-- /pc-layout -->
+
+    <footer>
+      <b>How to read this.</b> A typical factory code looks like <b>HA 361 60</b>: a letter prefix
+      identifies the factory (or coding centre), followed by number groups. The slide does not explain
+      what the trailing <b>yy</b> / <b>yyy</b> group encodes. Barcelona, Spain, simply put <b>ZB</b> in front
+      of the Eindhoven <b>A3</b> code.
+      Author notes are the author&rsquo;s own observations, not archival statements.
+    </footer>
+
+  </div><!-- /tab-factory -->
+
+  </main>
+  </div><!-- /layout -->
+
 </div><!-- /wrap -->
 
 <script>
 // ── Shared CSV helpers ──────────────────────────────────────────────
 let DATA=[];
 let PC_DATA=[];
+let FC_DATA=[];
 
 function splitCSVLine(line){
   const out=[];let f='',q=false;
@@ -436,7 +574,10 @@ function parseCSV(text){
   const lines=text.trim().split(/\r?\n/);
   return lines.slice(1).map(line=>{
     const c=splitCSVLine(line);
-    return{id:+c[0],depth:+c[1],active:c[2]?c[2].split('|').map(Number):[],
+    // Highlighted positions are derived from the digit-pair columns (1-2, 3-4, 5-6)
+    // rather than read from the CSV's `active` column, so they can never drift apart.
+    const active=[[c[4],0],[c[5],2],[c[6],4]].flatMap(([v,o])=>v?[o,o+1]:[]);
+    return{id:+c[0],depth:+c[1],active,
       code:c[3],nnMain:c[4],nnCentre:c[5],nnSub:c[6],baseline:c[7],
       main:c[8],centre:c[9],a64:c[10],a68:c[11],note:c[12],ref:c[13],
       isCountry:c[14]==='true'};
@@ -449,26 +590,45 @@ function parseProductCSV(text){
     return{code:c[0],position:c[1],encodes:c[2],meaning:c[3],note:c[4]||''};
   });
 }
+function parseFactoryCSV(text){
+  const lines=text.trim().split(/\r?\n/);
+  return lines.slice(1).map(line=>{
+    const c=splitCSVLine(line);
+    return{code:c[0],pattern:c[1],country:c[2],factory:c[3],values:c[4]||'',note:c[5]||'',review:c[6]||''};
+  });
+}
 
 // ── Tab switching ───────────────────────────────────────────────────
 function switchTab(id){
   document.querySelectorAll('.tab-panel').forEach(p=>p.classList.toggle('active',p.id==='tab-'+id));
-  document.querySelectorAll('.tab-btn').forEach(b=>b.classList.toggle('active',b.id==='btn-'+id));
+  document.querySelectorAll('.tab-btn').forEach(b=>{
+    const on=b.id==='btn-'+id;b.classList.toggle('active',on);b.setAttribute('aria-selected',on);});
   syncStickyTop();
 }
+// Each tab is addressable as #<id> (e.g. index.html#factory). Tab buttons set the
+// hash, so refresh, back/forward and shared links all go through this one path.
+function tabFromHash(){
+  const id=decodeURIComponent(location.hash.slice(1));
+  return document.getElementById('tab-'+id)?id:'12nc';
+}
+window.addEventListener('hashchange',()=>switchTab(tabFromHash()));
 
-// ── Init: fetch both CSVs in parallel ──────────────────────────────
+// ── Init: fetch all CSVs in parallel ───────────────────────────────
 async function init(){
-  const [r1,r2]=await Promise.all([
-    fetch('12nc_matrix.csv'),
-    fetch('product_codes_matrix.csv')
+  const [r1,r2,r3]=await Promise.all([
+    fetch('12nc_matrix.csv',{cache:'no-store'}),
+    fetch('product_codes_matrix.csv',{cache:'no-store'}),
+    fetch('factory_codes_matrix.csv',{cache:'no-store'})
   ]);
   if(!r1.ok)throw new Error('Failed to load 12nc_matrix.csv: '+r1.status);
   if(!r2.ok)throw new Error('Failed to load product_codes_matrix.csv: '+r2.status);
+  if(!r3.ok)throw new Error('Failed to load factory_codes_matrix.csv: '+r3.status);
   DATA=parseCSV(await r1.text());
   PC_DATA=parseProductCSV(await r2.text());
+  FC_DATA=parseFactoryCSV(await r3.text());
   render();
   renderPC();
+  renderFC();
 }
 
 // ── 12NC table ──────────────────────────────────────────────────────
@@ -557,35 +717,57 @@ document.getElementById('q').addEventListener('input',e=>{state.q=e.target.value
 const pcState={q:''};
 const PC_ORDER=['First Letter','Second Letter','Third Letter','First Digit','Digit Group','Suffix'];
 
-function renderPC(){
-  const q=pcState.q.toLowerCase();
-  const rows=PC_DATA.filter(d=>!q||[d.code,d.position,d.encodes,d.meaning,d.note].join(' ').toLowerCase().includes(q));
-  document.getElementById('pc-count').textContent=rows.length+' of '+PC_DATA.length+' codes';
-  document.getElementById('pc-noresult').hidden=rows.length>0;
+// Shared by the Pre-12NC tabs: filters `data` on `q`, buckets rows by `groupOf`
+// (in `order` first, then any new groups as encountered), and renders a
+// grouped CODE / <detail> table into the elements with the given id prefix.
+function renderGroupedTable({prefix,data,q,fields,order,groupOf,groupLabel,detailLabel,detailHTML}){
+  q=q.toLowerCase();
+  const rows=data.filter(d=>!q||fields.map(f=>d[f]).join(' ').toLowerCase().includes(q));
+  document.getElementById(prefix+'-count').textContent=rows.length+' of '+data.length+' codes';
+  document.getElementById(prefix+'-noresult').hidden=rows.length>0;
   const buckets=new Map();
-  PC_ORDER.forEach(p=>buckets.set(p,[]));
+  order.forEach(g=>buckets.set(g,[]));
   rows.forEach(d=>{
-    if(!buckets.has(d.position))buckets.set(d.position,[]);
-    buckets.get(d.position).push(d);
+    const g=groupOf(d);
+    if(!buckets.has(g))buckets.set(g,[]);
+    buckets.get(g).push(d);
   });
   let html='';
-  buckets.forEach((items,pos)=>{
+  buckets.forEach((items,g)=>{
     if(!items.length)return;
-    const label=pos+' · '+items[0].encodes;
-    html+='<tr class="pc-group-row"><td colspan="2">'+esc(label)+'</td></tr>';
+    html+='<tr class="pc-group-row"><td colspan="2">'+esc(groupLabel(g,items))+'</td></tr>';
     items.forEach(d=>{
-      const meaning=d.note
-        ?esc(d.meaning)+'<br><span class="pc-note">'+esc(d.note)+'</span>'
-        :esc(d.meaning);
       html+='<tr>'
         +'<td class="pc-code" data-l="CODE">'+esc(d.code)+'</td>'
-        +'<td class="pc-meaning" data-l="MEANING">'+meaning+'</td>'
+        +'<td class="pc-meaning" data-l="'+detailLabel+'">'+detailHTML(d)+'</td>'
         +'</tr>';
     });
   });
-  document.getElementById('pc-tb').innerHTML=html;
+  document.getElementById(prefix+'-tb').innerHTML=html;
+}
+function noteHTML(n){return n?'<br><span class="pc-note">'+esc(n)+'</span>':'';}
+
+function renderPC(){
+  renderGroupedTable({prefix:'pc',data:PC_DATA,q:pcState.q,
+    fields:['code','position','encodes','meaning','note'],
+    order:PC_ORDER,groupOf:d=>d.position,groupLabel:(pos,items)=>pos+' · '+items[0].encodes,
+    detailLabel:'MEANING',detailHTML:d=>esc(d.meaning)+noteHTML(d.note)});
 }
 document.getElementById('pc-q').addEventListener('input',e=>{pcState.q=e.target.value.trim();renderPC();});
+
+// ── Factory codes table ─────────────────────────────────────────────
+const fcState={q:''};
+
+function renderFC(){
+  renderGroupedTable({prefix:'fc',data:FC_DATA,q:fcState.q,
+    fields:['code','pattern','country','factory','values','note'],
+    order:[],groupOf:d=>d.country,groupLabel:c=>c,
+    detailLabel:'FACTORY',detailHTML:d=>'<b>'+esc(d.factory)+'</b>'
+      +(d.pattern?' &middot; <span class="fc-pattern">'+esc(d.pattern)+'</span>':'')
+      +(d.values?'<br>'+esc(d.values):'')
+      +noteHTML(d.note)});
+}
+document.getElementById('fc-q').addEventListener('input',e=>{fcState.q=e.target.value.trim();renderFC();});
 
 // ── Sticky header height sync ───────────────────────────────────────
 function syncStickyTop(){
@@ -599,9 +781,10 @@ window.addEventListener('resize',syncStickyTop);
 const _ro=new ResizeObserver(syncStickyTop);
 _ro.observe(document.getElementById('ctrl-12nc'));
 _ro.observe(document.getElementById('ctrl-product'));
+_ro.observe(document.getElementById('ctrl-factory'));
 
 init();
-syncStickyTop();
+switchTab(tabFromHash());
 </script>
 </body>
 </html>

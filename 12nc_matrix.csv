@@ -42,16 +42,16 @@ id,depth,active,code,nnMain,nnCentre,nnSub,baseline,main,centre,a64,a68,note,ref
 41,1,0|1,41,41,,,41NN NNN NNNNN,Production Articles,According Centre Issue,Not mentioned,Not mentioned,,,false
 42,2,0|1|2|3,22,42,22,,4222 NNN NNNNN,Production Articles,The Netherlands,Production articles for domestic appliances,Domestic appliances,,,false
 43,2,0|1|2|3,13,43,13,,4313 NNN NNNNN,Production Articles,United Kingdom,Miscellaneous production articles,Miscellaneous (for further subdivision of this main group see code survey UCT 18-201),,,false
-44,3,0|1|2|3|4,03,43,13,03,4313 03N NNNNN,Production Articles,United Kingdom,"Production articles of the Philips Industries, Central Stores Croydon (Packing)",Not mentioned,,,false
-45,3,0|1|2|3|4,00,43,22,00,4322 00N NNNNN,Production Articles,The Netherlands,"Production articles of the Verenigde Stofzuiger Fabriek NV., Leeuwarden",Not mentioned,,,false
-46,3,0|1|2|3|4,01,43,22,01,4322 01N NNNNN,Production Articles,The Netherlands,"Production articles of the N.V. Dordtsche Metaalindustrie â€œJohan de Wittâ€, Dordrecht",Not mentioned,,,false
-47,3,0|1|2|3|4,02,43,22,02,4322 02N NNNNN,Production Articles,The Netherlands,"Production articles made of ceramic materials, including metallic parts and electro-mechanical parts of the P.D. Icoma",Not mentioned,,,false
-48,3,0|1|2|3|4,04,43,22,04,4322 04N NNNNN,Production Articles,The Netherlands,Production articles for capacitors (excluding variable capacitors) and resistors of the P.D. Icoma,Not mentioned,,,false
-49,3,0|1|2|3|4,05,43,22,05,4322 05N NNNNN,Production Articles,The Netherlands,Miscellaneous production articles of the P.D. Icorna,Not mentioned,,,false
-50,3,0|1|2|3|4,06,43,22,06,4322 06N NNNNN,Production Articles,The Netherlands,Production articles for variable capacitors,Not mentioned,,,false
-51,3,0|1|2|3|4,07,43,22,07,4322 07N NNNNN,Production Articles,The Netherlands,Production articles for loud speakers,Not mentioned,,,false
-52,3,0|1|2|3|4,08,43,22,08,4322 08N NNNNN,Production Articles,The Netherlands,Production articles of the N.V. Philips USFA,Not mentioned,,,false
-53,3,0|1|2|3|4,09,43,22,09,4322 09N NNNNN,Production Articles,The Netherlands,"Production articles of the N.V. Metaaldraadlampenfabriek â€œVoltâ€, Tilburg",Not mentioned,,,false
+44,3,0|1|2|3|4|5,03,43,13,03,4313 03N NNNNN,Production Articles,United Kingdom,"Production articles of the Philips Industries, Central Stores Croydon (Packing)",Not mentioned,,,false
+45,3,0|1|2|3|4|5,00,43,22,00,4322 00N NNNNN,Production Articles,The Netherlands,"Production articles of the Verenigde Stofzuiger Fabriek NV., Leeuwarden",Not mentioned,,,false
+46,3,0|1|2|3|4|5,01,43,22,01,4322 01N NNNNN,Production Articles,The Netherlands,"Production articles of the N.V. Dordtsche Metaalindustrie â€œJohan de Wittâ€, Dordrecht",Not mentioned,,,false
+47,3,0|1|2|3|4|5,02,43,22,02,4322 02N NNNNN,Production Articles,The Netherlands,"Production articles made of ceramic materials, including metallic parts and electro-mechanical parts of the P.D. Icoma",Not mentioned,,,false
+48,3,0|1|2|3|4|5,04,43,22,04,4322 04N NNNNN,Production Articles,The Netherlands,Production articles for capacitors (excluding variable capacitors) and resistors of the P.D. Icoma,Not mentioned,,,false
+49,3,0|1|2|3|4|5,05,43,22,05,4322 05N NNNNN,Production Articles,The Netherlands,Miscellaneous production articles of the P.D. Icorna,Not mentioned,,,false
+50,3,0|1|2|3|4|5,06,43,22,06,4322 06N NNNNN,Production Articles,The Netherlands,Production articles for variable capacitors,Not mentioned,,,false
+51,3,0|1|2|3|4|5,07,43,22,07,4322 07N NNNNN,Production Articles,The Netherlands,Production articles for loud speakers,Not mentioned,,,false
+52,3,0|1|2|3|4|5,08,43,22,08,4322 08N NNNNN,Production Articles,The Netherlands,Production articles of the N.V. Philips USFA,Not mentioned,,,false
+53,3,0|1|2|3|4|5,09,43,22,09,4322 09N NNNNN,Production Articles,The Netherlands,"Production articles of the N.V. Metaaldraadlampenfabriek â€œVoltâ€, Tilburg",Not mentioned,,,false
 54,2,0|1|2|3,22,43,22,,4322 NNN NNNNN,Production Articles,The Netherlands,Miscellaneous production articles,Not mentioned,,,false
 55,2,0|1|2|3,22,44,22,,4422 NNN NNNNN,Production Articles,The Netherlands,"Production articles for fittings, ballasts and accessories for incandescent lamps and gas discharge lamps","Fittings, ballasts and accessories for incandescent lamps and gas discharge lamps",,,false
 56,1,0|1,44,44,,,44NN NNN NNNNN,Production Articles,According Centre Issue,"Production articles for fittings, ballasts and accessories for incandescent lamps and gas discharge lamps","Fittings, ballasts and accessories for incandescent lamps and gas discharge lamps",Seen in Philips Hue Ensis LED Driver (12NC 4404 0090 78291) Model Number: S040YN2400167,https://www.reddit.com/r/Hue/comments/xcfrax/help_with_philips_led_driver/,false
@@ -91,53 +91,53 @@ id,depth,active,code,nnMain,nnCentre,nnSub,baseline,main,centre,a64,a68,note,ref
 90,1,0|1,78,78,,,78NN NNN NNNNN,Articles for Works-Mechanization,According Centre Issue,Articles for works mechanization of domestic appliances,Domestic appliances,,,false
 91,1,0|1,79,79,,,79NN NNN NNNNN,Articles for Works-Mechanization,According Centre Issue,Not mentioned,Not mentioned,,,false
 92,1,0|1,80,80,,,80NN NNN NNNNN,Articles for Works-Mechanization,According Centre Issue,Not mentioned,Not mentioned,,,false
-93,3,0|1|2|3|4,00,81,22,00,8122 00N NNNNN,Articles for Works-Mechanization,The Netherlands,"Articles for the works mechanization of the Verenigde Stofzuiger Fabriek N.V., Leeuwarden",Not mentioned,,,false
-94,3,0|1|2|3|4,01,81,22,01,8122 01N NNNNN,Articles for Works-Mechanization,The Netherlands,"Articles for the works mechanization of the NV. Dordtsche Metaalindustrie â€œJohan de Wittâ€, Dordrecht",Not mentioned,,,false
-95,3,0|1|2|3|4,02,81,22,02,8122 02N NNNNN,Articles for Works-Mechanization,The Netherlands,"Articles for works mechanizetion of the N.V. Cirex, Borne",Not mentioned,,,false
-96,3,0|1|2|3|4,03,81,22,03,8122 03N NNNNN,Articles for Works-Mechanization,The Netherlands,"Articles for the works mechanization of the P.P.I., Baarn",Not mentioned,,,false
-97,3,0|1|2|3|4,04,81,22,04,8122 04N NNNNN,Articles for Works-Mechanization,The Netherlands,Articles for the mechanical works mechanization for apparatus for industrial use,Not mentioned,,,false
-98,3,0|1|2|3|4,05,81,22,05,8122 05N NNNNN,Articles for Works-Mechanization,The Netherlands,Articles for the electrical works mechanization for apparatus for industrial use,Not mentioned,,,false
-99,3,0|1|2|3|4,06,81,22,06,8122 06N NNNNN,Articles for Works-Mechanization,The Netherlands,"Articles for the works mechanization of the N.V. Philips USFA, Eindhoven",Not mentioned,,,false
-100,3,0|1|2|3|4,07,81,22,07,8122 07N NNNNN,Articles for Works-Mechanization,The Netherlands,"Articles for the works mechanization of the N.y. Metaaldraadlampenfabriek â€œVoltâ€, Tilburg",Not mentioned,,,false
-101,3,0|1|2|3|4,08,81,22,08,8122 08N NNNNN,Articles for Works-Mechanization,The Netherlands,"Articles for the works mechanization of the N.y. Metaaldraadlampenfabriek â€œVoltâ€, Tilburg",Not mentioned,,,false
+93,3,0|1|2|3|4|5,00,81,22,00,8122 00N NNNNN,Articles for Works-Mechanization,The Netherlands,"Articles for the works mechanization of the Verenigde Stofzuiger Fabriek N.V., Leeuwarden",Not mentioned,,,false
+94,3,0|1|2|3|4|5,01,81,22,01,8122 01N NNNNN,Articles for Works-Mechanization,The Netherlands,"Articles for the works mechanization of the NV. Dordtsche Metaalindustrie â€œJohan de Wittâ€, Dordrecht",Not mentioned,,,false
+95,3,0|1|2|3|4|5,02,81,22,02,8122 02N NNNNN,Articles for Works-Mechanization,The Netherlands,"Articles for works mechanizetion of the N.V. Cirex, Borne",Not mentioned,,,false
+96,3,0|1|2|3|4|5,03,81,22,03,8122 03N NNNNN,Articles for Works-Mechanization,The Netherlands,"Articles for the works mechanization of the P.P.I., Baarn",Not mentioned,,,false
+97,3,0|1|2|3|4|5,04,81,22,04,8122 04N NNNNN,Articles for Works-Mechanization,The Netherlands,Articles for the mechanical works mechanization for apparatus for industrial use,Not mentioned,,,false
+98,3,0|1|2|3|4|5,05,81,22,05,8122 05N NNNNN,Articles for Works-Mechanization,The Netherlands,Articles for the electrical works mechanization for apparatus for industrial use,Not mentioned,,,false
+99,3,0|1|2|3|4|5,06,81,22,06,8122 06N NNNNN,Articles for Works-Mechanization,The Netherlands,"Articles for the works mechanization of the N.V. Philips USFA, Eindhoven",Not mentioned,,,false
+100,3,0|1|2|3|4|5,07,81,22,07,8122 07N NNNNN,Articles for Works-Mechanization,The Netherlands,"Articles for the works mechanization of the N.y. Metaaldraadlampenfabriek â€œVoltâ€, Tilburg",Not mentioned,,,false
+101,3,0|1|2|3|4|5,08,81,22,08,8122 08N NNNNN,Articles for Works-Mechanization,The Netherlands,"Articles for the works mechanization of the N.y. Metaaldraadlampenfabriek â€œVoltâ€, Tilburg",Not mentioned,,,false
 102,2,0|1|2|3,22,81,22,,8122 NNN NNNNN,Articles for Works-Mechanization,The Netherlands,Articles for miscellaneous works mechanizations,Miscellaneous (for further subdivision of this main group see code survey UCT 18-201),,,false
-103,3,0|1|2|3|4,00,82,11,00,8211 00N NNNNN,Articles and Sketches,France,"Trial articles and sketches of La Radiotechnique, Usine Tubes, Suresnes",Not mentioned,,,false
-104,3,0|1|2|3|4,01,82,11,01,8211 01N NNNNN,Articles and Sketches,France,"Trial articles and sketches of La Radiotechnique, Usine Postes, Suresnes",Not mentioned,,,false
-105,3,0|1|2|3|4,02,82,11,02,8211 02N NNNNN,Articles and Sketches,France,Trial articles and sketches of S.A. Hyperelec Brive,Not mentioned,,,false
-106,3,0|1|2|3|4,03,82,11,03,8211 03N NNNNN,Articles and Sketches,France,"Trial articles and sketches of La Radiotechnique, Rambouillet",Not mentioned,,,false
-107,3,0|1|2|3|4,04,82,11,04,8211 04N NNNNN,Articles and Sketches,France,"Trial articles and sketches of La Radiotechnique, Departement Music, Suresnes",Not mentioned,,,false
-108,3,0|1|2|3|4,05,82,11,05,8211 05N NNNNN,Articles and Sketches,France,"Trial articles and sketches of S.A. Portenseigne, bureau dâ€™Etudes, Fontenay sous Bois",Not mentioned,,,false
-109,3,0|1|2|3|4,06,82,11,06,8211 06N NNNNN,Articles and Sketches,France,"Trial articles and sketches of Compagnie Generale des Condensateurs, Tours",Not mentioned,,,false
-110,3,0|1|2|3|4,07,82,11,07,8211 07N NNNNN,Articles and Sketches,France,"Trial articles and sketches of Comprim, Evreux",Not mentioned,,,false
-111,3,0|1|2|3|4,08,82,11,08,8211 08N NNNNN,Articles and Sketches,France,"Trial articles and sketches of S.A. Portenseigne, Departement Antennes Professionelles, Fontenay",Not mentioned,,,false
-112,3,0|1|2|3|4,09,82,11,09,8211 09N NNNNN,Articles and Sketches,France,Trial articles and sketches of S.A. Philips Athis de lâ€™Orne,Not mentioned,,,false
-113,3,0|1|2|3|4,10,82,11,10,8211 10N NNNNN,Articles and Sketches,France,"Trial articles and sketches of La Radiotechnique, Dept. Marques ComplÃ©mentaires, Suresnes",Not mentioned,,,false
+103,3,0|1|2|3|4|5,00,82,11,00,8211 00N NNNNN,Articles and Sketches,France,"Trial articles and sketches of La Radiotechnique, Usine Tubes, Suresnes",Not mentioned,,,false
+104,3,0|1|2|3|4|5,01,82,11,01,8211 01N NNNNN,Articles and Sketches,France,"Trial articles and sketches of La Radiotechnique, Usine Postes, Suresnes",Not mentioned,,,false
+105,3,0|1|2|3|4|5,02,82,11,02,8211 02N NNNNN,Articles and Sketches,France,Trial articles and sketches of S.A. Hyperelec Brive,Not mentioned,,,false
+106,3,0|1|2|3|4|5,03,82,11,03,8211 03N NNNNN,Articles and Sketches,France,"Trial articles and sketches of La Radiotechnique, Rambouillet",Not mentioned,,,false
+107,3,0|1|2|3|4|5,04,82,11,04,8211 04N NNNNN,Articles and Sketches,France,"Trial articles and sketches of La Radiotechnique, Departement Music, Suresnes",Not mentioned,,,false
+108,3,0|1|2|3|4|5,05,82,11,05,8211 05N NNNNN,Articles and Sketches,France,"Trial articles and sketches of S.A. Portenseigne, bureau dâ€™Etudes, Fontenay sous Bois",Not mentioned,,,false
+109,3,0|1|2|3|4|5,06,82,11,06,8211 06N NNNNN,Articles and Sketches,France,"Trial articles and sketches of Compagnie Generale des Condensateurs, Tours",Not mentioned,,,false
+110,3,0|1|2|3|4|5,07,82,11,07,8211 07N NNNNN,Articles and Sketches,France,"Trial articles and sketches of Comprim, Evreux",Not mentioned,,,false
+111,3,0|1|2|3|4|5,08,82,11,08,8211 08N NNNNN,Articles and Sketches,France,"Trial articles and sketches of S.A. Portenseigne, Departement Antennes Professionelles, Fontenay",Not mentioned,,,false
+112,3,0|1|2|3|4|5,09,82,11,09,8211 09N NNNNN,Articles and Sketches,France,Trial articles and sketches of S.A. Philips Athis de lâ€™Orne,Not mentioned,,,false
+113,3,0|1|2|3|4|5,10,82,11,10,8211 10N NNNNN,Articles and Sketches,France,"Trial articles and sketches of La Radiotechnique, Dept. Marques ComplÃ©mentaires, Suresnes",Not mentioned,,,false
 114,2,0|1|2|3,11,82,11,,8211 NNN NNNNN,Articles and Sketches,France,"Trial articles and sketches, general",Trial articles and sketches (for further subdivision of this main group see code survey UCT 18-201),,,false
-115,3,0|1|2|3|4,00,82,13,00,8213 00N NNNNN,Articles and Sketches,United Kingdom,Trial articles and sketches of the Mullard Radio Valve Company Ltd. Simonstone,Not mentioned,,,false
-116,3,0|1|2|3|4,01,82,13,01,8213 01N NNNNN,Articles and Sketches,United Kingdom,"Trial articles and sketches of the Philips Industries, Central Stores, Croydon (Packing)",Not mentioned,,,false
-117,3,0|1|2|3|4,10,82,13,10,8213 10N NNNNN,Articles and Sketches,United Kingdom,Trial articles and sketches of the Philips Industries Croydon,Not mentioned,,,false
-118,3,0|1|2|3|4,50,82,13,50,8213 50N NNNNN,Articles and Sketches,United Kingdom,Trial articles and sketches of the Associated Semi Conductors Manuf. Ltd. Stockport,Not mentioned,,,false
+115,3,0|1|2|3|4|5,00,82,13,00,8213 00N NNNNN,Articles and Sketches,United Kingdom,Trial articles and sketches of the Mullard Radio Valve Company Ltd. Simonstone,Not mentioned,,,false
+116,3,0|1|2|3|4|5,01,82,13,01,8213 01N NNNNN,Articles and Sketches,United Kingdom,"Trial articles and sketches of the Philips Industries, Central Stores, Croydon (Packing)",Not mentioned,,,false
+117,3,0|1|2|3|4|5,10,82,13,10,8213 10N NNNNN,Articles and Sketches,United Kingdom,Trial articles and sketches of the Philips Industries Croydon,Not mentioned,,,false
+118,3,0|1|2|3|4|5,50,82,13,50,8213 50N NNNNN,Articles and Sketches,United Kingdom,Trial articles and sketches of the Associated Semi Conductors Manuf. Ltd. Stockport,Not mentioned,,,false
 119,2,0|1|2|3,13,82,13,,8213 NNN NNNNN,Articles and Sketches,United Kingdom,"Trial articles and sketches, general",Not mentioned,,,false
-120,3,0|1|2|3|4,00,82,22,00,8222 00N NNNNN,Articles and Sketches,The Netherlands,"Verenige Stofzuiger Fabriek N.V., Leeuwarden",Not mentioned,,,false
-121,3,0|1|2|3|4,01,82,22,01,8222 01N NNNNN,Articles and Sketches,The Netherlands,"N.V. Dordtsche Metaalindustrie â€œJohan de Witt"", Dordrecht",Not mentioned,,,false
-122,3,0|1|2|3|4,02,82,22,02,8222 02N NNNNN,Articles and Sketches,The Netherlands,"P.D. Electron tubes, dept. Receiving tubes",Not mentioned,,,false
-123,3,0|1|2|3|4,03,82,22,03,8222 03N NNNNN,Articles and Sketches,The Netherlands,"P.D. Electron tubes, dept. Special tubes",Not mentioned,,,false
-124,3,0|1|2|3|4,04,82,22,04,8222 04N NNNNN,Articles and Sketches,The Netherlands,"P.D. Electron tubes, dept. Picture tubes",Not mentioned,,,false
-125,3,0|1|2|3|4,05,82,22,05,8222 05N NNNNN,Articles and Sketches,The Netherlands,"P.D. Electron tubes, dept. Semiconductors",Not mentioned,,,false
-126,3,0|1|2|3|4,06,82,22,06,8222 06N NNNNN,Articles and Sketches,The Netherlands,"N.V. Philips Computer Industries, Apeldoorn",Not mentioned,,,false
-127,3,0|1|2|3|4,07,82,22,07,8222 07N NNNNN,Articles and Sketches,The Netherlands,P.D. Glass,Not mentioned,,,false
-128,3,0|1|2|3|4,09,82,22,09,8222 09N NNNNN,Articles and Sketches,The Netherlands,"N.V. Philips USFA, Eindhoven",Not mentioned,,,false
-129,3,0|1|2|3|4,10,82,22,10,8222 10N NNNNN,Articles and Sketches,The Netherlands,"Miscellaneous articles, planning department, Electron tubes",Not mentioned,,,false
-130,3,0|1|2|3|4,11,82,22,11,8222 11N NNNNN,Articles and Sketches,The Netherlands,P.D. Telecommunication and defence systems,Not mentioned,,,false
-131,3,0|1|2|3|4,12,82,22,12,8222 12N NNNNN,Articles and Sketches,The Netherlands,P.D. Telecommunication and defence systems,Not mentioned,,,false
-132,3,0|1|2|3|4,13,82,22,13,8222 13N NNNNN,Articles and Sketches,The Netherlands,P.D. Telecommunication and defence systems,Not mentioned,,,false
-133,3,0|1|2|3|4,14,82,22,14,8222 14N NNNNN,Articles and Sketches,The Netherlands,P.D. Telecommunication and defence systems,Not mentioned,,,false
-134,3,0|1|2|3|4,15,82,22,15,8222 15N NNNNN,Articles and Sketches,The Netherlands,P.D. Telecommunication and defence systems,Not mentioned,,,false
-135,3,0|1|2|3|4,16,82,22,16,8222 16N NNNNN,Articles and Sketches,The Netherlands,P.D. X-Ray and Medical equipment,Not mentioned,,,false
-136,3,0|1|2|3|4,17,82,22,17,8222 17N NNNNN,Articles and Sketches,The Netherlands,"N.V. Metaaldraadlampenfabriek â€œVoltâ€, Tilburg",Not mentioned,,,false
-137,3,0|1|2|3|4,18,82,22,18,8222 18N NNNNN,Articles and Sketches,The Netherlands,Drawings of the information centre for Electricity supplies in Buildings,Not mentioned,,,false
-138,3,0|1|2|3|4,19,82,22,19,8222 19N NNNNN,Articles and Sketches,The Netherlands,Trial articles and sketches for components of the P.D. Light,Not mentioned,,,false
-139,3,0|1|2|3|4,20,82,22,20,8222 20N NNNNN,Articles and Sketches,The Netherlands,Trial professional code numbers of the Lamps Development Department,Not mentioned,,,false
+120,3,0|1|2|3|4|5,00,82,22,00,8222 00N NNNNN,Articles and Sketches,The Netherlands,"Verenige Stofzuiger Fabriek N.V., Leeuwarden",Not mentioned,,,false
+121,3,0|1|2|3|4|5,01,82,22,01,8222 01N NNNNN,Articles and Sketches,The Netherlands,"N.V. Dordtsche Metaalindustrie â€œJohan de Witt"", Dordrecht",Not mentioned,,,false
+122,3,0|1|2|3|4|5,02,82,22,02,8222 02N NNNNN,Articles and Sketches,The Netherlands,"P.D. Electron tubes, dept. Receiving tubes",Not mentioned,,,false
+123,3,0|1|2|3|4|5,03,82,22,03,8222 03N NNNNN,Articles and Sketches,The Netherlands,"P.D. Electron tubes, dept. Special tubes",Not mentioned,,,false
+124,3,0|1|2|3|4|5,04,82,22,04,8222 04N NNNNN,Articles and Sketches,The Netherlands,"P.D. Electron tubes, dept. Picture tubes",Not mentioned,,,false
+125,3,0|1|2|3|4|5,05,82,22,05,8222 05N NNNNN,Articles and Sketches,The Netherlands,"P.D. Electron tubes, dept. Semiconductors",Not mentioned,,,false
+126,3,0|1|2|3|4|5,06,82,22,06,8222 06N NNNNN,Articles and Sketches,The Netherlands,"N.V. Philips Computer Industries, Apeldoorn",Not mentioned,,,false
+127,3,0|1|2|3|4|5,07,82,22,07,8222 07N NNNNN,Articles and Sketches,The Netherlands,P.D. Glass,Not mentioned,,,false
+128,3,0|1|2|3|4|5,09,82,22,09,8222 09N NNNNN,Articles and Sketches,The Netherlands,"N.V. Philips USFA, Eindhoven",Not mentioned,,,false
+129,3,0|1|2|3|4|5,10,82,22,10,8222 10N NNNNN,Articles and Sketches,The Netherlands,"Miscellaneous articles, planning department, Electron tubes",Not mentioned,,,false
+130,3,0|1|2|3|4|5,11,82,22,11,8222 11N NNNNN,Articles and Sketches,The Netherlands,P.D. Telecommunication and defence systems,Not mentioned,,,false
+131,3,0|1|2|3|4|5,12,82,22,12,8222 12N NNNNN,Articles and Sketches,The Netherlands,P.D. Telecommunication and defence systems,Not mentioned,,,false
+132,3,0|1|2|3|4|5,13,82,22,13,8222 13N NNNNN,Articles and Sketches,The Netherlands,P.D. Telecommunication and defence systems,Not mentioned,,,false
+133,3,0|1|2|3|4|5,14,82,22,14,8222 14N NNNNN,Articles and Sketches,The Netherlands,P.D. Telecommunication and defence systems,Not mentioned,,,false
+134,3,0|1|2|3|4|5,15,82,22,15,8222 15N NNNNN,Articles and Sketches,The Netherlands,P.D. Telecommunication and defence systems,Not mentioned,,,false
+135,3,0|1|2|3|4|5,16,82,22,16,8222 16N NNNNN,Articles and Sketches,The Netherlands,P.D. X-Ray and Medical equipment,Not mentioned,,,false
+136,3,0|1|2|3|4|5,17,82,22,17,8222 17N NNNNN,Articles and Sketches,The Netherlands,"N.V. Metaaldraadlampenfabriek â€œVoltâ€, Tilburg",Not mentioned,,,false
+137,3,0|1|2|3|4|5,18,82,22,18,8222 18N NNNNN,Articles and Sketches,The Netherlands,Drawings of the information centre for Electricity supplies in Buildings,Not mentioned,,,false
+138,3,0|1|2|3|4|5,19,82,22,19,8222 19N NNNNN,Articles and Sketches,The Netherlands,Trial articles and sketches for components of the P.D. Light,Not mentioned,,,false
+139,3,0|1|2|3|4|5,20,82,22,20,8222 20N NNNNN,Articles and Sketches,The Netherlands,Trial professional code numbers of the Lamps Development Department,Not mentioned,,,false
 140,2,0|1|2|3,22,82,22,,8222 NNN NNNNN,Articles and Sketches,The Netherlands,"Trial articles and sketches, general",Not mentioned,,,false
 141,1,0|1,83,83,,,83NN NNN NNNNN,Articles for Works-Mechanization,According Centre Issue,Not mentioned,Not mentioned,,,false
 142,1,0|1,84,84,,,84NN NNN NNNNN,Articles for Works-Mechanization,According Centre Issue,Not mentioned,Not mentioned,,,false
@@ -254,24 +254,24 @@ id,depth,active,code,nnMain,nnCentre,nnSub,baseline,main,centre,a64,a68,note,ref
 253,2,2|3,96,,96,,NN96 NNN NNNNN,,,Not mentioned,Not mentioned,,,true
 254,2,2|3,97,,97,,NN97 NNN NNNNN,,,Not mentioned,Not mentioned,,,true
 255,2,2|3,98,,98,,NN98 NNN NNNNN,,,Not mentioned,Not mentioned,,,true
-256,3,2|3|4,01,,99,01,NN99 01N NNNNN,According Main Group,Algeria,Not mentioned,Baseline of Centre of Issue,,,false
-257,3,2|3|4,02,,99,02,NN99 02N NNNNN,According Main Group,Bolivia,Not mentioned,Baseline of Centre of Issue,,,false
-258,3,2|3|4,03,,99,03,NN99 03N NNNNN,According Main Group,Burundi,Not mentioned,Baseline of Centre of Issue,,,false
-259,3,2|3|4,04,,99,04,NN99 04N NNNNN,According Main Group,Republica of Congo,Not mentioned,Baseline of Centre of Issue,,,false
-260,3,2|3|4,05,,99,05,NN99 05N NNNNN,According Main Group,Costa Rica,Not mentioned,Baseline of Centre of Issue,,,false
-261,3,2|3|4,06,,99,06,NN99 06N NNNNN,According Main Group,El Salvador,Not mentioned,Baseline of Centre of Issue,,,false
-262,3,2|3|4,07,,99,07,NN99 07N NNNNN,According Main Group,Equador,Not mentioned,Baseline of Centre of Issue,,,false
-263,3,2|3|4,08,,99,08,NN99 08N NNNNN,According Main Group,Ethiopia,Not mentioned,Baseline of Centre of Issue,,,false
-264,3,2|3|4,09,,99,09,NN99 09N NNNNN,According Main Group,Guatemala,Not mentioned,Baseline of Centre of Issue,,,false
-265,3,2|3|4,10,,99,10,NN99 10N NNNNN,According Main Group,Iran,Not mentioned,Baseline of Centre of Issue,,,false
-266,3,2|3|4,11,,99,11,NN99 11N NNNNN,According Main Group,Lebanon,Not mentioned,Baseline of Centre of Issue,,,false
-267,3,2|3|4,12,,99,12,NN99 12N NNNNN,According Main Group,Morocco,Not mentioned,Baseline of Centre of Issue,,,false
-268,3,2|3|4,13,,99,13,NN99 13N NNNNN,According Main Group,Pakistan,Not mentioned,Baseline of Centre of Issue,,,false
-269,3,2|3|4,14,,99,14,NN99 14N NNNNN,According Main Group,Paraguay,Not mentioned,Baseline of Centre of Issue,,,false
-270,3,2|3|4,15,,99,15,NN99 15N NNNNN,According Main Group,Peru*,Not mentioned,Baseline of Centre of Issue,,,false
-271,3,2|3|4,16,,99,16,NN99 16N NNNNN,According Main Group,Rhodesia,Not mentioned,Baseline of Centre of Issue,,,false
-272,3,2|3|4,17,,99,17,NN99 17N NNNNN,According Main Group,Syria,Not mentioned,Baseline of Centre of Issue,,,false
-273,3,2|3|4,18,,99,18,NN99 18N NNNNN,According Main Group,Thailand,Not mentioned,Baseline of Centre of Issue,,,false
-274,3,2|3|4,19,,99,19,NN99 19N NNNNN,According Main Group,Tunisia,Not mentioned,Baseline of Centre of Issue,,,false
-275,3,2|3|4,20,,99,20,NN99 20N NNNNN,According Main Group,Taiwan*,Not mentioned,Baseline of Centre of Issue,,,false
-276,3,2|3|4,21,,99,21,NN99 21N NNNNN,According Main Group,Philippines,Not mentioned,Baseline of Centre of Issue,,,false
+256,3,2|3|4|5,01,,99,01,NN99 01N NNNNN,According Main Group,Algeria,Not mentioned,Baseline of Centre of Issue,,,false
+257,3,2|3|4|5,02,,99,02,NN99 02N NNNNN,According Main Group,Bolivia,Not mentioned,Baseline of Centre of Issue,,,false
+258,3,2|3|4|5,03,,99,03,NN99 03N NNNNN,According Main Group,Burundi,Not mentioned,Baseline of Centre of Issue,,,false
+259,3,2|3|4|5,04,,99,04,NN99 04N NNNNN,According Main Group,Republica of Congo,Not mentioned,Baseline of Centre of Issue,,,false
+260,3,2|3|4|5,05,,99,05,NN99 05N NNNNN,According Main Group,Costa Rica,Not mentioned,Baseline of Centre of Issue,,,false
+261,3,2|3|4|5,06,,99,06,NN99 06N NNNNN,According Main Group,El Salvador,Not mentioned,Baseline of Centre of Issue,,,false
+262,3,2|3|4|5,07,,99,07,NN99 07N NNNNN,According Main Group,Equador,Not mentioned,Baseline of Centre of Issue,,,false
+263,3,2|3|4|5,08,,99,08,NN99 08N NNNNN,According Main Group,Ethiopia,Not mentioned,Baseline of Centre of Issue,,,false
+264,3,2|3|4|5,09,,99,09,NN99 09N NNNNN,According Main Group,Guatemala,Not mentioned,Baseline of Centre of Issue,,,false
+265,3,2|3|4|5,10,,99,10,NN99 10N NNNNN,According Main Group,Iran,Not mentioned,Baseline of Centre of Issue,,,false
+266,3,2|3|4|5,11,,99,11,NN99 11N NNNNN,According Main Group,Lebanon,Not mentioned,Baseline of Centre of Issue,,,false
+267,3,2|3|4|5,12,,99,12,NN99 12N NNNNN,According Main Group,Morocco,Not mentioned,Baseline of Centre of Issue,,,false
+268,3,2|3|4|5,13,,99,13,NN99 13N NNNNN,According Main Group,Pakistan,Not mentioned,Baseline of Centre of Issue,,,false
+269,3,2|3|4|5,14,,99,14,NN99 14N NNNNN,According Main Group,Paraguay,Not mentioned,Baseline of Centre of Issue,,,false
+270,3,2|3|4|5,15,,99,15,NN99 15N NNNNN,According Main Group,Peru*,Not mentioned,Baseline of Centre of Issue,,,false
+271,3,2|3|4|5,16,,99,16,NN99 16N NNNNN,According Main Group,Rhodesia,Not mentioned,Baseline of Centre of Issue,,,false
+272,3,2|3|4|5,17,,99,17,NN99 17N NNNNN,According Main Group,Syria,Not mentioned,Baseline of Centre of Issue,,,false
+273,3,2|3|4|5,18,,99,18,NN99 18N NNNNN,According Main Group,Thailand,Not mentioned,Baseline of Centre of Issue,,,false
+274,3,2|3|4|5,19,,99,19,NN99 19N NNNNN,According Main Group,Tunisia,Not mentioned,Baseline of Centre of Issue,,,false
+275,3,2|3|4|5,20,,99,20,NN99 20N NNNNN,According Main Group,Taiwan*,Not mentioned,Baseline of Centre of Issue,,,false
+276,3,2|3|4|5,21,,99,21,NN99 21N NNNNN,According Main Group,Philippines,Not mentioned,Baseline of Centre of Issue,,,false
