@@ -101,44 +101,44 @@ id,depth,active,code,nnMain,nnCentre,nnSub,baseline,main,centre,a64,a68,note,ref
 100,3,0|1|2|3|4|5,07,81,22,07,8122 07N NNNNN,Articles for Works-Mechanization,The Netherlands,"Articles for the works mechanization of the N.V. Metaaldraadlampenfabriek “Volt”, Tilburg",Not mentioned,,,false
 101,3,0|1|2|3|4|5,08,81,22,08,8122 08N NNNNN,Articles for Works-Mechanization,The Netherlands,"Articles for the works mechanization of the N.V. Metaaldraadlampenfabriek “Volt”, Tilburg",Not mentioned,,,false
 102,2,0|1|2|3,22,81,22,,8122 NNN NNNNN,Articles for Works-Mechanization,The Netherlands,Articles for miscellaneous works mechanizations,Miscellaneous (for further subdivision of this main group see code survey UCT 18-201),,,false
-103,3,0|1|2|3|4|5,00,82,11,00,8211 00N NNNNN,Articles and Sketches,France,"Trial articles and sketches of La Radiotechnique, Usine Tubes, Suresnes",Not mentioned,,,false
-104,3,0|1|2|3|4|5,01,82,11,01,8211 01N NNNNN,Articles and Sketches,France,"Trial articles and sketches of La Radiotechnique, Usine Postes, Suresnes",Not mentioned,,,false
-105,3,0|1|2|3|4|5,02,82,11,02,8211 02N NNNNN,Articles and Sketches,France,Trial articles and sketches of S.A. Hyperelec Brive,Not mentioned,,,false
-106,3,0|1|2|3|4|5,03,82,11,03,8211 03N NNNNN,Articles and Sketches,France,"Trial articles and sketches of La Radiotechnique, Rambouillet",Not mentioned,,,false
-107,3,0|1|2|3|4|5,04,82,11,04,8211 04N NNNNN,Articles and Sketches,France,"Trial articles and sketches of La Radiotechnique, Departement Music, Suresnes",Not mentioned,,,false
-108,3,0|1|2|3|4|5,05,82,11,05,8211 05N NNNNN,Articles and Sketches,France,"Trial articles and sketches of S.A. Portenseigne, bureau d’Etudes, Fontenay sous Bois",Not mentioned,,,false
-109,3,0|1|2|3|4|5,06,82,11,06,8211 06N NNNNN,Articles and Sketches,France,"Trial articles and sketches of Compagnie Generale des Condensateurs, Tours",Not mentioned,,,false
-110,3,0|1|2|3|4|5,07,82,11,07,8211 07N NNNNN,Articles and Sketches,France,"Trial articles and sketches of Comprim, Evreux",Not mentioned,,,false
-111,3,0|1|2|3|4|5,08,82,11,08,8211 08N NNNNN,Articles and Sketches,France,"Trial articles and sketches of S.A. Portenseigne, Departement Antennes Professionelles, Fontenay",Not mentioned,,,false
-112,3,0|1|2|3|4|5,09,82,11,09,8211 09N NNNNN,Articles and Sketches,France,Trial articles and sketches of S.A. Philips Athis de l’Orne,Not mentioned,,,false
-113,3,0|1|2|3|4|5,10,82,11,10,8211 10N NNNNN,Articles and Sketches,France,"Trial articles and sketches of La Radiotechnique, Dept. Marques Complémentaires, Suresnes",Not mentioned,,,false
-114,2,0|1|2|3,11,82,11,,8211 NNN NNNNN,Articles and Sketches,France,"Trial articles and sketches, general",Trial articles and sketches (for further subdivision of this main group see code survey UCT 18-201),,,false
-115,3,0|1|2|3|4|5,00,82,13,00,8213 00N NNNNN,Articles and Sketches,United Kingdom,Trial articles and sketches of the Mullard Radio Valve Company Ltd. Simonstone,Not mentioned,,,false
-116,3,0|1|2|3|4|5,01,82,13,01,8213 01N NNNNN,Articles and Sketches,United Kingdom,"Trial articles and sketches of the Philips Industries, Central Stores, Croydon (Packing)",Not mentioned,,,false
-117,3,0|1|2|3|4|5,10,82,13,10,8213 10N NNNNN,Articles and Sketches,United Kingdom,Trial articles and sketches of the Philips Industries Croydon,Not mentioned,,,false
-118,3,0|1|2|3|4|5,50,82,13,50,8213 50N NNNNN,Articles and Sketches,United Kingdom,Trial articles and sketches of the Associated Semi Conductors Manuf. Ltd. Stockport,Not mentioned,,,false
-119,2,0|1|2|3,13,82,13,,8213 NNN NNNNN,Articles and Sketches,United Kingdom,"Trial articles and sketches, general",Not mentioned,,,false
-120,3,0|1|2|3|4|5,00,82,22,00,8222 00N NNNNN,Articles and Sketches,The Netherlands,"Verenige Stofzuiger Fabriek N.V., Leeuwarden",Not mentioned,,,false
-121,3,0|1|2|3|4|5,01,82,22,01,8222 01N NNNNN,Articles and Sketches,The Netherlands,"N.V. Dordtsche Metaalindustrie “Johan de Witt”, Dordrecht",Not mentioned,,,false
-122,3,0|1|2|3|4|5,02,82,22,02,8222 02N NNNNN,Articles and Sketches,The Netherlands,"P.D. Electron tubes, dept. Receiving tubes",Not mentioned,,,false
-123,3,0|1|2|3|4|5,03,82,22,03,8222 03N NNNNN,Articles and Sketches,The Netherlands,"P.D. Electron tubes, dept. Special tubes",Not mentioned,,,false
-124,3,0|1|2|3|4|5,04,82,22,04,8222 04N NNNNN,Articles and Sketches,The Netherlands,"P.D. Electron tubes, dept. Picture tubes",Not mentioned,,,false
-125,3,0|1|2|3|4|5,05,82,22,05,8222 05N NNNNN,Articles and Sketches,The Netherlands,"P.D. Electron tubes, dept. Semiconductors",Not mentioned,,,false
-126,3,0|1|2|3|4|5,06,82,22,06,8222 06N NNNNN,Articles and Sketches,The Netherlands,"N.V. Philips Computer Industries, Apeldoorn",Not mentioned,,,false
-127,3,0|1|2|3|4|5,07,82,22,07,8222 07N NNNNN,Articles and Sketches,The Netherlands,P.D. Glass,Not mentioned,,,false
-128,3,0|1|2|3|4|5,09,82,22,09,8222 09N NNNNN,Articles and Sketches,The Netherlands,"N.V. Philips USFA, Eindhoven",Not mentioned,,,false
-129,3,0|1|2|3|4|5,10,82,22,10,8222 10N NNNNN,Articles and Sketches,The Netherlands,"Miscellaneous articles, planning department, Electron tubes",Not mentioned,,,false
-130,3,0|1|2|3|4|5,11,82,22,11,8222 11N NNNNN,Articles and Sketches,The Netherlands,P.D. Telecommunication and defence systems,Not mentioned,,,false
-131,3,0|1|2|3|4|5,12,82,22,12,8222 12N NNNNN,Articles and Sketches,The Netherlands,P.D. Telecommunication and defence systems,Not mentioned,,,false
-132,3,0|1|2|3|4|5,13,82,22,13,8222 13N NNNNN,Articles and Sketches,The Netherlands,P.D. Telecommunication and defence systems,Not mentioned,,,false
-133,3,0|1|2|3|4|5,14,82,22,14,8222 14N NNNNN,Articles and Sketches,The Netherlands,P.D. Telecommunication and defence systems,Not mentioned,,,false
-134,3,0|1|2|3|4|5,15,82,22,15,8222 15N NNNNN,Articles and Sketches,The Netherlands,P.D. Telecommunication and defence systems,Not mentioned,,,false
-135,3,0|1|2|3|4|5,16,82,22,16,8222 16N NNNNN,Articles and Sketches,The Netherlands,P.D. X-Ray and Medical equipment,Not mentioned,,,false
-136,3,0|1|2|3|4|5,17,82,22,17,8222 17N NNNNN,Articles and Sketches,The Netherlands,"N.V. Metaaldraadlampenfabriek “Volt”, Tilburg",Not mentioned,,,false
-137,3,0|1|2|3|4|5,18,82,22,18,8222 18N NNNNN,Articles and Sketches,The Netherlands,Drawings of the information centre for Electricity supplies in Buildings,Not mentioned,,,false
-138,3,0|1|2|3|4|5,19,82,22,19,8222 19N NNNNN,Articles and Sketches,The Netherlands,Trial articles and sketches for components of the P.D. Light,Not mentioned,,,false
-139,3,0|1|2|3|4|5,20,82,22,20,8222 20N NNNNN,Articles and Sketches,The Netherlands,Trial professional code numbers of the Lamps Development Department,Not mentioned,,,false
-140,2,0|1|2|3,22,82,22,,8222 NNN NNNNN,Articles and Sketches,The Netherlands,"Trial articles and sketches, general",Not mentioned,,,false
+103,3,0|1|2|3|4|5,00,82,11,00,8211 00N NNNNN,Trial Articles and Sketches,France,"Trial articles and sketches of La Radiotechnique, Usine Tubes, Suresnes",Not mentioned,,,false
+104,3,0|1|2|3|4|5,01,82,11,01,8211 01N NNNNN,Trial Articles and Sketches,France,"Trial articles and sketches of La Radiotechnique, Usine Postes, Suresnes",Not mentioned,,,false
+105,3,0|1|2|3|4|5,02,82,11,02,8211 02N NNNNN,Trial Articles and Sketches,France,Trial articles and sketches of S.A. Hyperelec Brive,Not mentioned,,,false
+106,3,0|1|2|3|4|5,03,82,11,03,8211 03N NNNNN,Trial Articles and Sketches,France,"Trial articles and sketches of La Radiotechnique, Rambouillet",Not mentioned,,,false
+107,3,0|1|2|3|4|5,04,82,11,04,8211 04N NNNNN,Trial Articles and Sketches,France,"Trial articles and sketches of La Radiotechnique, Departement Music, Suresnes",Not mentioned,,,false
+108,3,0|1|2|3|4|5,05,82,11,05,8211 05N NNNNN,Trial Articles and Sketches,France,"Trial articles and sketches of S.A. Portenseigne, bureau d’Etudes, Fontenay sous Bois",Not mentioned,,,false
+109,3,0|1|2|3|4|5,06,82,11,06,8211 06N NNNNN,Trial Articles and Sketches,France,"Trial articles and sketches of Compagnie Generale des Condensateurs, Tours",Not mentioned,,,false
+110,3,0|1|2|3|4|5,07,82,11,07,8211 07N NNNNN,Trial Articles and Sketches,France,"Trial articles and sketches of Comprim, Evreux",Not mentioned,,,false
+111,3,0|1|2|3|4|5,08,82,11,08,8211 08N NNNNN,Trial Articles and Sketches,France,"Trial articles and sketches of S.A. Portenseigne, Departement Antennes Professionelles, Fontenay",Not mentioned,,,false
+112,3,0|1|2|3|4|5,09,82,11,09,8211 09N NNNNN,Trial Articles and Sketches,France,Trial articles and sketches of S.A. Philips Athis de l’Orne,Not mentioned,,,false
+113,3,0|1|2|3|4|5,10,82,11,10,8211 10N NNNNN,Trial Articles and Sketches,France,"Trial articles and sketches of La Radiotechnique, Dept. Marques Complémentaires, Suresnes",Not mentioned,,,false
+114,2,0|1|2|3,11,82,11,,8211 NNN NNNNN,Trial Articles and Sketches,France,"Trial articles and sketches, general",Trial articles and sketches (for further subdivision of this main group see code survey UCT 18-201),,,false
+115,3,0|1|2|3|4|5,00,82,13,00,8213 00N NNNNN,Trial Articles and Sketches,United Kingdom,Trial articles and sketches of the Mullard Radio Valve Company Ltd. Simonstone,Not mentioned,,,false
+116,3,0|1|2|3|4|5,01,82,13,01,8213 01N NNNNN,Trial Articles and Sketches,United Kingdom,"Trial articles and sketches of the Philips Industries, Central Stores, Croydon (Packing)",Not mentioned,,,false
+117,3,0|1|2|3|4|5,10,82,13,10,8213 10N NNNNN,Trial Articles and Sketches,United Kingdom,Trial articles and sketches of the Philips Industries Croydon,Not mentioned,,,false
+118,3,0|1|2|3|4|5,50,82,13,50,8213 50N NNNNN,Trial Articles and Sketches,United Kingdom,Trial articles and sketches of the Associated Semi Conductors Manuf. Ltd. Stockport,Not mentioned,,,false
+119,2,0|1|2|3,13,82,13,,8213 NNN NNNNN,Trial Articles and Sketches,United Kingdom,"Trial articles and sketches, general",Not mentioned,,,false
+120,3,0|1|2|3|4|5,00,82,22,00,8222 00N NNNNN,Trial Articles and Sketches,The Netherlands,"Verenige Stofzuiger Fabriek N.V., Leeuwarden",Not mentioned,,,false
+121,3,0|1|2|3|4|5,01,82,22,01,8222 01N NNNNN,Trial Articles and Sketches,The Netherlands,"N.V. Dordtsche Metaalindustrie “Johan de Witt”, Dordrecht",Not mentioned,,,false
+122,3,0|1|2|3|4|5,02,82,22,02,8222 02N NNNNN,Trial Articles and Sketches,The Netherlands,"P.D. Electron tubes, dept. Receiving tubes",Not mentioned,,,false
+123,3,0|1|2|3|4|5,03,82,22,03,8222 03N NNNNN,Trial Articles and Sketches,The Netherlands,"P.D. Electron tubes, dept. Special tubes",Not mentioned,,,false
+124,3,0|1|2|3|4|5,04,82,22,04,8222 04N NNNNN,Trial Articles and Sketches,The Netherlands,"P.D. Electron tubes, dept. Picture tubes",Not mentioned,,,false
+125,3,0|1|2|3|4|5,05,82,22,05,8222 05N NNNNN,Trial Articles and Sketches,The Netherlands,"P.D. Electron tubes, dept. Semiconductors",Not mentioned,,,false
+126,3,0|1|2|3|4|5,06,82,22,06,8222 06N NNNNN,Trial Articles and Sketches,The Netherlands,"N.V. Philips Computer Industries, Apeldoorn",Not mentioned,,,false
+127,3,0|1|2|3|4|5,07,82,22,07,8222 07N NNNNN,Trial Articles and Sketches,The Netherlands,P.D. Glass,Not mentioned,,,false
+128,3,0|1|2|3|4|5,09,82,22,09,8222 09N NNNNN,Trial Articles and Sketches,The Netherlands,"N.V. Philips USFA, Eindhoven",Not mentioned,,,false
+129,3,0|1|2|3|4|5,10,82,22,10,8222 10N NNNNN,Trial Articles and Sketches,The Netherlands,"Miscellaneous articles, planning department, Electron tubes",Not mentioned,,,false
+130,3,0|1|2|3|4|5,11,82,22,11,8222 11N NNNNN,Trial Articles and Sketches,The Netherlands,P.D. Telecommunication and defence systems,Not mentioned,,,false
+131,3,0|1|2|3|4|5,12,82,22,12,8222 12N NNNNN,Trial Articles and Sketches,The Netherlands,P.D. Telecommunication and defence systems,Not mentioned,,,false
+132,3,0|1|2|3|4|5,13,82,22,13,8222 13N NNNNN,Trial Articles and Sketches,The Netherlands,P.D. Telecommunication and defence systems,Not mentioned,,,false
+133,3,0|1|2|3|4|5,14,82,22,14,8222 14N NNNNN,Trial Articles and Sketches,The Netherlands,P.D. Telecommunication and defence systems,Not mentioned,,,false
+134,3,0|1|2|3|4|5,15,82,22,15,8222 15N NNNNN,Trial Articles and Sketches,The Netherlands,P.D. Telecommunication and defence systems,Not mentioned,,,false
+135,3,0|1|2|3|4|5,16,82,22,16,8222 16N NNNNN,Trial Articles and Sketches,The Netherlands,P.D. X-Ray and Medical equipment,Not mentioned,,,false
+136,3,0|1|2|3|4|5,17,82,22,17,8222 17N NNNNN,Trial Articles and Sketches,The Netherlands,"N.V. Metaaldraadlampenfabriek “Volt”, Tilburg",Not mentioned,,,false
+137,3,0|1|2|3|4|5,18,82,22,18,8222 18N NNNNN,Trial Articles and Sketches,The Netherlands,Drawings of the information centre for Electricity supplies in Buildings,Not mentioned,,,false
+138,3,0|1|2|3|4|5,19,82,22,19,8222 19N NNNNN,Trial Articles and Sketches,The Netherlands,Trial articles and sketches for components of the P.D. Light,Not mentioned,,,false
+139,3,0|1|2|3|4|5,20,82,22,20,8222 20N NNNNN,Trial Articles and Sketches,The Netherlands,Trial professional code numbers of the Lamps Development Department,Not mentioned,,,false
+140,2,0|1|2|3,22,82,22,,8222 NNN NNNNN,Trial Articles and Sketches,The Netherlands,"Trial articles and sketches, general",Not mentioned,,,false
 141,1,0|1,83,83,,,83NN NNN NNNNN,Articles for Works-Mechanization,According Centre Issue,Not mentioned,Not mentioned,,,false
 142,1,0|1,84,84,,,84NN NNN NNNNN,Articles for Works-Mechanization,According Centre Issue,Not mentioned,Not mentioned,,,false
 143,1,0|1,85,85,,,85NN NNN NNNNN,Commercial Products,According Centre Issue,Not mentioned,Not mentioned,,,false
