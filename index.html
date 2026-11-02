@@ -6,214 +6,236 @@
 <title>Philips Part Numbering Reference</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,600&display=swap" rel="stylesheet">
 <style>
+  /* Layout: masthead → section tabs → sticky search/filter bar → full-width reference table.
+     White paper, hairline rules, one dark-blue ink accent. No cards, no shadows.
+
+     Type: Schibsted Grotesk for everything a reader scans (text, codes, numbers). Its zero
+     is plain (no dot, no slash) and narrower than the letter O; capital I has serifs and
+     lowercase l has a tail, so 0/O and 1/I/l never collide. Codes and number columns use
+     tabular figures. Source Serif 4 is used only for the page title and the article note. */
   :root{
-    --bg:#f4f7fb; --panel:#ffffff; --ink:#0f2033; --ink2:#3a4d63;
-    --soft:#6b7d92; --line:#e1e8f0; --line2:#cdd8e5;
-    --brand:#1266d4; --brand-d:#0b4ea8; --brand-bg:#e8f1fd;
-    --accent:#0a7d8c; --accent-bg:#e2f4f6;
-    --mono:'IBM Plex Mono',ui-monospace,Menlo,Consolas,monospace;
-    --sans:'IBM Plex Sans',system-ui,-apple-system,'Segoe UI',Arial,sans-serif;
-    --w1:132px; --w2:92px; --w3:auto; --w4:150px; --w5:230px;
+    --paper:#ffffff; --tint:#f5f7f9;
+    --ink:#15191e; --ink-2:#3b424b; --muted:#68717c; --faint:#b3b9c0;
+    --rule:#e4e7ea; --rule-2:#cdd2d7;
+    --accent:#0d4f99; --accent-tint:#edf2f9;
+    --sans:'Schibsted Grotesk','Helvetica Neue',Arial,sans-serif;
+    --serif:'Source Serif 4',Georgia,'Times New Roman',serif;
+    --w1:166px; --w2:76px; --w3:auto; --w4:150px; --w5:230px;
   }
   *{box-sizing:border-box}
   html{-webkit-text-size-adjust:100%}
-  body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:14.5px;line-height:1.5}
-  a{color:var(--brand)}
-  .wrap{padding:0 22px}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);
+    font-size:14.5px;line-height:1.5;font-variant-numeric:lining-nums}
+  a{color:var(--accent);text-underline-offset:2px}
+  .wrap{padding-left:max(24px,env(safe-area-inset-left,0px));padding-right:max(24px,env(safe-area-inset-right,0px))}
+  button,input{font-family:inherit}
 
-  /* ── Header & masthead ──────────────────────────────────── */
-  header{padding:20px 0 0}
-  .masthead{display:flex;align-items:center;gap:8px 20px;flex-wrap:wrap;
-    padding-bottom:14px;border-bottom:2px solid var(--line2)}
-  h1{font-family:var(--sans);font-weight:600;font-size:27px;letter-spacing:-.3px;
-    margin:0;color:var(--ink);white-space:nowrap}
-  .masthead .sub{flex:1;min-width:280px;max-width:none;padding-left:20px;
-    border-left:2px solid var(--line2);line-height:1.45}
-  h1 .nc{font-family:var(--mono);font-weight:600;background:var(--brand);color:#fff;
-    padding:2px 10px;border-radius:6px;font-size:23px}
-  .sub{color:var(--soft);font-size:13.5px;max-width:64ch}
-  .docref{font-family:var(--mono);font-size:11.5px;color:var(--soft);text-align:right;line-height:1.8}
-  .docref b{color:var(--ink2);font-weight:600}
+  /* ── Masthead ───────────────────────────────────────────── */
+  .masthead{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;
+    gap:14px 48px;padding:24px 0 16px;border-bottom:1px solid var(--ink)}
+  .masthead-title{min-width:0}
+  h1{font-family:var(--serif);font-weight:600;font-size:27px;line-height:1.15;
+    letter-spacing:-.2px;margin:0;color:var(--ink);text-wrap:balance}
+  .sub{color:var(--muted);font-size:13.5px;margin:6px 0 0;max-width:72ch}
 
-  /* ── Layout: vertical tab rail (left) + content ────────── */
-  .layout{display:grid;grid-template-columns:auto minmax(0,1fr);gap:20px;align-items:start}
-  .layout>main{grid-column:2;grid-row:1;min-width:0}
-  .tab-rail{grid-column:1;grid-row:1;position:sticky;top:16px;margin-top:16px;width:200px;
-    display:flex;flex-direction:column;padding:8px 0;background:var(--panel);
-    border:1px solid var(--line);border-radius:10px;box-shadow:0 1px 2px rgba(15,32,51,.04)}
-  .rail-cap{font-size:10.5px;letter-spacing:.8px;text-transform:uppercase;font-weight:600;
-    color:var(--soft);padding:4px 16px 8px}
-  .tab-btn{display:flex;align-items:center;gap:10px;width:100%;text-align:left;
-    font-family:var(--sans);font-size:13.5px;font-weight:500;line-height:1.3;
-    padding:10px 14px 10px 13px;cursor:pointer;border:none;border-left:3px solid transparent;
-    background:none;color:var(--ink2);transition:color .12s,background .12s,border-color .12s}
-  .tab-btn svg{flex:none;width:18px;height:18px;color:var(--soft)}
-  .tab-btn:hover{background:#f7fafd;color:var(--ink)}
-  .tab-btn:focus-visible{outline:none;box-shadow:inset 0 0 0 2px var(--brand-bg)}
-  .tab-btn.active{background:var(--brand-bg);border-left-color:var(--brand);
-    color:var(--brand-d);font-weight:600}
-  .tab-btn.active svg{color:var(--brand)}
+  /* Companion article (LinkedIn). Hidden until ARTICLE.url is set in the script. */
+  .article{flex:0 1 360px;min-width:240px;padding-left:16px;border-left:1px solid var(--rule-2);
+    font-size:12.5px;line-height:1.45}
+  .article-kicker{display:flex;align-items:center;gap:6px;font-size:10.5px;font-weight:600;letter-spacing:.08em;
+    text-transform:uppercase;color:var(--muted);margin-bottom:3px}
+  .article-title{font-family:var(--serif);font-weight:600;font-size:15px;line-height:1.3;
+    color:var(--ink);text-decoration:none}
+  .article-title:hover{color:var(--accent);text-decoration:underline}
+  .article-title .arrow{font-family:var(--sans);color:var(--accent);font-size:13px;margin-left:3px}
+  .li-mark{flex:none;display:block}
+  .article-desc{margin:3px 0 0;color:var(--muted)}
+
+  /* ── Section tabs ───────────────────────────────────────── */
+  .tabs{display:flex;gap:4px 32px;border-bottom:1px solid var(--rule);overflow-x:auto;
+    scrollbar-width:none}
+  .tab-btn{flex:none;font-size:14px;font-weight:500;color:var(--muted);background:none;
+    border:none;border-bottom:2px solid transparent;margin-bottom:-1px;padding:13px 0 11px;
+    cursor:pointer;white-space:nowrap;transition:color .12s,border-color .12s}
+  .tab-btn:hover{color:var(--ink)}
+  .tab-btn.active{color:var(--ink);font-weight:600;border-bottom-color:var(--accent)}
+  .tab-btn:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
   .tab-panel{display:none}
   .tab-panel.active{display:block}
 
-  /* ── Per-tab intro strip ────────────────────────────────── */
-  .tab-intro{padding:16px 0 4px;display:flex;justify-content:space-between;
-    align-items:flex-start;gap:24px;flex-wrap:wrap}
-
-  /* ── 12NC shape visualizer ──────────────────────────────── */
-  .shape{flex:none;max-width:230px;margin-left:auto;text-align:right;display:flex;flex-direction:column;align-items:flex-end;
-    font-family:var(--mono);font-size:18px;letter-spacing:2px;line-height:1.15;
-    color:var(--line2);user-select:none;font-weight:600}
-  .shape .d.on{color:var(--brand)}
-  .shape .sep{color:var(--line2);margin:0 3px}
-  .shapecap{font-family:var(--sans);font-size:11px;color:var(--soft);letter-spacing:0;
-    font-weight:400;line-height:1.3}
-
   /* ── Sticky controls (12NC) ─────────────────────────────── */
-  .controls{position:sticky;top:0;background:var(--bg);padding:10px 0 8px;z-index:30;
-    border-bottom:1px solid var(--line)}
-  .searchrow{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
-  #ctrl-12nc input[type=search]{padding:8px 12px;font-size:13.5px}
-  input[type=search]{flex:1;min-width:260px;font-family:var(--mono);font-size:14px;
-    padding:11px 14px;border:1px solid var(--line2);background:var(--panel);color:var(--ink);
-    border-radius:9px}
-  input[type=search]::placeholder{color:#9fb0c2}
-  input[type=search]:focus{outline:none;border-color:var(--brand);box-shadow:0 0 0 3px var(--brand-bg)}
-  .count{font-family:var(--mono);font-size:12.5px;color:var(--soft);white-space:nowrap}
-  .filterbar{margin-top:8px;display:flex;flex-wrap:wrap;align-items:center;gap:6px 14px}
-  .searchrow .fgroup{padding-left:12px;border-left:2px solid var(--line2)}
-  .fgroup{display:flex;flex-wrap:wrap;align-items:center;gap:6px}
-  .flabel{font-family:var(--mono);font-size:10.5px;letter-spacing:.3px;color:var(--ink2);
-    font-weight:600;text-transform:uppercase;white-space:nowrap;margin-right:2px}
+  .controls{position:sticky;top:0;z-index:30;background:var(--paper);
+    padding:14px 0 12px;border-bottom:1px solid var(--rule);
+    display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px 32px;align-items:start}
+  .ctrl-main{display:flex;flex-direction:column;gap:10px;min-width:0}
+  .searchrow{display:flex;gap:10px 18px;flex-wrap:wrap;align-items:center}
+  input[type=search]{flex:1 1 320px;max-width:560px;min-width:0;font-size:14px;
+    padding:8px 12px;border:1px solid var(--rule-2);border-radius:3px;
+    background:var(--paper);color:var(--ink)}
+  input[type=search]::placeholder{color:var(--faint)}
+  input[type=search]:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-tint)}
+  .count{font-size:12.5px;color:var(--muted);white-space:nowrap;font-variant-numeric:tabular-nums}
+  .filterbar{display:flex;flex-wrap:wrap;align-items:center;gap:6px 14px}
+  .searchrow .fgroup{padding-left:18px;border-left:1px solid var(--rule)}
+  .fgroup{display:flex;flex-wrap:wrap;align-items:center;gap:6px 8px}
+  .flabel{font-size:10.5px;letter-spacing:.08em;color:var(--muted);font-weight:600;
+    text-transform:uppercase;white-space:nowrap}
   .fbtns{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
-  .finfo{display:inline-flex;align-items:center;justify-content:center;width:17px;height:17px;
-    border-radius:50%;border:1px solid var(--line2);font-size:10.5px;font-weight:600;
-    font-style:italic;font-family:Georgia,serif;color:var(--soft);cursor:help;background:var(--panel)}
-  .chip{font-size:12px;padding:4px 11px;cursor:pointer;border:1px solid var(--line2);
-    background:var(--panel);color:var(--ink2);user-select:none;border-radius:20px;transition:all .12s}
-  .chip:hover{border-color:var(--brand);color:var(--brand)}
-  .chip[aria-pressed=true]{background:var(--brand);color:#fff;border-color:var(--brand)}
-  .chip.accent[aria-pressed=true]{background:var(--accent);border-color:var(--accent)}
+  .finfo{display:inline-flex;align-items:center;justify-content:center;width:16px;height:16px;
+    border-radius:50%;border:1px solid var(--rule-2);font-size:10px;font-weight:600;
+    font-style:italic;font-family:var(--serif);color:var(--muted);cursor:help;background:var(--paper)}
+  .finfo:focus-visible{outline:2px solid var(--accent);outline-offset:1px}
+  .chip{font-size:12.5px;font-weight:500;line-height:1.35;padding:4px 10px;cursor:pointer;
+    border:1px solid var(--rule-2);border-radius:3px;background:var(--paper);color:var(--ink-2);
+    user-select:none;transition:background .12s,border-color .12s,color .12s}
+  .chip:hover{border-color:var(--ink-2);color:var(--ink)}
+  .chip:focus-visible{outline:2px solid var(--accent);outline-offset:1px}
+  .chip[aria-pressed=true]{background:var(--accent);color:#fff;border-color:var(--accent)}
+  .chip.accent[aria-pressed=true]{background:var(--ink);border-color:var(--ink)}
 
-  /* ── Sticky controls (product codes) ───────────────────── */
-  .controls-simple{position:sticky;top:0;background:var(--bg);padding:12px 0 10px;z-index:30;
-    border-bottom:1px solid var(--line)}
+  /* 12-position ruler: shows which digits the visible rows define */
+  .shape{display:flex;flex-direction:column;align-items:flex-end;gap:6px;user-select:none}
+  .shape-cells{display:flex;align-items:center;gap:2px}
+  .shape .d{display:inline-flex;align-items:center;justify-content:center;width:16px;height:22px;
+    border:1px solid var(--rule);font-size:12.5px;font-weight:600;color:var(--faint);background:var(--paper)}
+  .shape .d.on{color:var(--accent);border-color:#b9cbe3;background:var(--accent-tint)}
+  .shape .sep{width:6px}
+  .shapecap{font-size:11px;color:var(--muted);line-height:1.3;text-align:right}
 
-  /* ── Card & table (shared) ──────────────────────────────── */
-  .card{background:var(--panel);border:1px solid var(--line);border-radius:12px;
-    margin-top:14px;overflow:visible;box-shadow:0 1px 2px rgba(15,32,51,.04)}
+  /* ── Sticky controls (pre-12NC tabs) ───────────────────── */
+  .controls-simple{position:sticky;top:0;background:var(--paper);padding:14px 0 12px;z-index:30}
+
+  /* ── Reference tables (shared) ─────────────────────────── */
+  .sheet{margin-top:0}
   .tablescroll{overflow:visible}
   table{width:100%;border-collapse:separate;border-spacing:0;font-size:13.5px;table-layout:fixed}
   colgroup .c1{width:var(--w1)} colgroup .c2{width:var(--w2)}
   colgroup .c4{width:var(--w4)} colgroup .c5{width:var(--w5)}
-  thead th{position:sticky;top:var(--cth,120px);z-index:10;text-align:left;font-size:10.5px;
-    letter-spacing:.5px;text-transform:uppercase;color:var(--soft);font-weight:600;
-    padding:13px 14px;background:#eef3f9;border-bottom:1px solid var(--line2);white-space:nowrap}
-  thead th.num{text-align:center;white-space:normal;line-height:1.25}
-  tbody td{padding:12px 14px;border-bottom:1px solid var(--line);vertical-align:top}
-  tbody tr:last-child td{border-bottom:none}
-  tbody tr:hover{background:#f7fafd}
-  .code{font-family:var(--mono);font-weight:600;font-size:14px;letter-spacing:.5px;
-    white-space:nowrap;color:var(--ink)}
-  .code .g{color:var(--line2)} .code .p{color:var(--brand)}
-  .num{font-family:var(--mono);font-size:14px;font-weight:600;text-align:center;color:var(--ink)}
-  .num .g{color:var(--line2);font-weight:500}
-  .assign{font-size:13px;color:var(--ink2);line-height:1.45}
-  .meta{font-size:12.5px;color:var(--soft)}
-  .note{font-size:12px;color:var(--ink2);background:var(--brand-bg);padding:8px 11px;
-    border-radius:8px;line-height:1.45}
-  .note a{font-size:11px;display:inline-block;margin-top:4px;font-weight:500}
-  .empty{color:var(--line2)}
-  .noresult{padding:48px;text-align:center;color:var(--soft);font-family:var(--mono)}
+  thead th{position:sticky;top:var(--cth,120px);z-index:10;text-align:left;vertical-align:bottom;
+    font-size:10.5px;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);font-weight:600;
+    padding:10px 12px 8px;background:var(--paper);border-bottom:1px solid var(--ink);white-space:nowrap}
+  thead th.num{text-align:center;white-space:normal;line-height:1.3;font-size:10.5px;color:var(--muted);font-weight:600}
+  tbody td{padding:10px 12px;border-bottom:1px solid var(--rule);vertical-align:top}
+  tbody tr:hover td{background:var(--tint)}
 
-  /* ── Product-codes table specifics ─────────────────────── */
-  .pc-group-row td{background:#eef3f9;font-size:10.5px;letter-spacing:.8px;
-    text-transform:uppercase;font-weight:600;color:var(--soft);
-    padding:10px 14px;border-bottom:1px solid var(--line2)}
-  .pc-code{font-family:var(--mono);font-weight:700;font-size:15px;color:var(--brand)}
-  .pc-meaning{font-size:13.5px;color:var(--ink2)}
-  .fc-pattern{font-family:var(--mono);font-size:12.5px;color:var(--soft)}
-  .pc-note{font-size:12px;color:var(--ink2);background:var(--brand-bg);
-    padding:8px 11px;border-radius:8px;line-height:1.5}
+  /* 12NC code: each position sits in a fixed cell so digits and N placeholders align row to row */
+  .code{font-weight:600;font-size:13.5px;white-space:nowrap;color:var(--ink);
+    font-variant-numeric:tabular-nums;padding-right:8px}
+  .code span{display:inline-block;width:.8em;text-align:center}
+  .code .gap{width:7px}
+  .code .g{color:var(--faint);font-weight:500}
+  .code .p{color:var(--accent)}
+  .num{font-size:14px;font-weight:600;text-align:center;color:var(--ink);font-variant-numeric:tabular-nums}
+  .num .g{color:var(--faint);font-weight:500}
+  .assign{color:var(--ink-2);line-height:1.45}
+  .meta{font-size:12.5px;color:var(--muted)}
+  .note{display:block;font-size:12px;color:var(--ink-2);line-height:1.45;
+    padding:1px 0 1px 10px;border-left:2px solid var(--accent)}
+  .note a{font-size:11.5px;display:inline-block;margin-top:3px;font-weight:500}
+  .empty{color:var(--faint)}
+  .noresult{padding:48px;text-align:center;color:var(--muted)}
+
+  /* ── Pre-12NC tables ───────────────────────────────────── */
+  .pc-group-row td{background:var(--tint);font-size:10.5px;letter-spacing:.08em;
+    text-transform:uppercase;font-weight:600;color:var(--ink-2);
+    padding:8px 12px;border-bottom:1px solid var(--rule-2)}
+  tbody tr.pc-group-row:hover td{background:var(--tint)}
+  .pc-code{font-weight:700;font-size:15px;color:var(--accent);letter-spacing:.02em;
+    font-variant-numeric:tabular-nums}
+  .pc-meaning{font-size:13.5px;color:var(--ink-2)}
+  .pc-meaning b{color:var(--ink);font-weight:600}
+  .fc-pattern{font-size:12.5px;color:var(--muted);font-variant-numeric:tabular-nums}
+  .pc-note{display:inline-block;font-size:12px;color:var(--ink-2);line-height:1.5;
+    margin-top:4px;padding:1px 0 1px 10px;border-left:2px solid var(--accent)}
 
   /* ── Split layout ────────────────────────────────────── */
-  .pc-layout{display:flex;gap:32px;align-items:flex-start;margin-top:4px}
+  .pc-layout{display:flex;gap:32px;align-items:flex-start}
   .pc-left{flex:0 0 max(46%,620px);min-width:0}
   .pc-right{flex:1;min-width:0}
   @media(max-width:1100px){
-    .pc-layout{flex-direction:column}
+    .pc-layout{flex-direction:column;gap:0}
     .pc-left,.pc-right{flex:none;width:100%}
   }
 
-  /* ── Product-codes example card ─────────────────────── */
-  .pc-example{background:var(--panel);border:1px solid var(--line);border-radius:12px;
-    padding:20px 24px;margin:16px 0 4px;box-shadow:0 1px 2px rgba(15,32,51,.04)}
-  .pc-ex-head{font-size:10.5px;letter-spacing:.8px;text-transform:uppercase;
-    font-weight:600;color:var(--soft);margin-bottom:16px}
+  /* ── Pre-12NC example panel ─────────────────────────── */
+  .pc-example{background:var(--paper);border:1px solid var(--rule);border-radius:4px;
+    padding:20px 24px;margin:14px 0 4px}
+  .pc-ex-head{font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;
+    font-weight:600;color:var(--muted);margin-bottom:16px}
   .pc-ex-body{display:flex;gap:32px;align-items:flex-start;flex-wrap:wrap}
-  .pc-ex-img-wrap{flex:0 0 140px;width:140px;min-width:140px;max-width:140px;overflow:hidden;border-radius:8px;border:1px solid var(--line2)}
+  .pc-ex-img-wrap{flex:0 0 140px;width:140px;min-width:140px;max-width:140px;overflow:hidden;
+    border-radius:3px;border:1px solid var(--rule-2)}
   .pc-ex-img{width:100%;display:block;object-fit:cover}
   .pc-ex-segs-col{flex:0 0 100%;display:flex;flex-direction:column;gap:10px}
-  .pc-ex-model{font-family:var(--mono);font-size:26px;font-weight:700;
-    letter-spacing:4px;color:var(--ink);line-height:1}
+  .pc-ex-model{font-size:26px;font-weight:700;letter-spacing:3px;color:var(--ink);line-height:1;
+    font-variant-numeric:tabular-nums}
   .pc-ex-segs{display:flex;gap:4px;flex-wrap:nowrap;align-items:flex-start}
   .pc-ex-seg{display:flex;flex-direction:column;align-items:center;
     border-top:3px solid var(--sc,#888);padding:7px 10px 9px;
-    background:rgba(0,0,0,.025);border-radius:0 0 8px 8px;min-width:54px}
-  .pc-ex-char{font-family:var(--mono);font-size:19px;font-weight:700;
-    color:var(--sc,#888);letter-spacing:1px;margin-bottom:7px}
-  .pc-ex-info{display:flex;flex-direction:column;align-items:center;
-    gap:2px;text-align:center}
-  .pc-ex-pos{font-size:8.5px;letter-spacing:.5px;text-transform:uppercase;
-    color:var(--soft);font-weight:600}
-  .pc-ex-enc{font-size:10px;color:var(--ink2);font-weight:500}
+    background:rgba(0,0,0,.025);border-radius:0 0 4px 4px;min-width:54px}
+  .pc-ex-char{font-size:19px;font-weight:700;color:var(--sc,#888);letter-spacing:1px;
+    margin-bottom:7px;font-variant-numeric:tabular-nums}
+  .pc-ex-info{display:flex;flex-direction:column;align-items:center;gap:2px;text-align:center}
+  .pc-ex-pos{font-size:8.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:600}
+  .pc-ex-enc{font-size:10px;color:var(--ink-2);font-weight:500}
   .pc-ex-val{font-size:11px;color:var(--ink);font-weight:600;margin-top:1px}
-  .pc-ex-specs{border-collapse:collapse;font-size:13px;flex:none;min-width:260px}
-  .pc-ex-specs td{padding:5px 12px 5px 0;border-bottom:1px solid var(--line);vertical-align:top}
+  .pc-ex-specs{border-collapse:collapse;font-size:13px;flex:none;min-width:260px;table-layout:auto;width:auto}
+  .pc-ex-specs td{padding:5px 12px 5px 0;border-bottom:1px solid var(--rule);vertical-align:top}
   .pc-ex-specs tr:last-child td{border-bottom:none}
-  .spec-label{font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:.5px;
-    color:var(--soft);white-space:nowrap;padding-right:18px;padding-top:7px}
-  .spec-val{color:var(--ink2);line-height:1.45}
+  .pc-ex-specs tr:hover td{background:none}
+  .spec-label{font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:.06em;
+    color:var(--muted);white-space:nowrap;padding-right:18px;padding-top:7px}
+  .spec-val{color:var(--ink-2);line-height:1.45}
   @media(max-width:900px){
     .pc-ex-img-wrap{flex:0 0 100%;width:100%;max-width:340px}
     .pc-ex-model{font-size:26px;letter-spacing:3px}
   }
 
-  footer{margin:26px 0 60px;font-size:12.5px;color:var(--soft);line-height:1.6}
-  footer b{color:var(--ink2)}
+  /* ── Reading notes ─────────────────────────────────────── */
+  footer{margin:28px 0 60px;padding-top:14px;border-top:1px solid var(--rule);
+    font-size:13px;color:var(--muted);line-height:1.6;max-width:96ch}
+  footer b{color:var(--ink-2);font-weight:600}
 
   @media(max-width:1600px){
-    :root{--w1:124px;--w2:66px;--w4:112px;--w5:180px}
-  }
-
-  @media(max-width:1300px){
-    .layout{grid-template-columns:minmax(0,1fr);gap:0}
-    .layout>main,.tab-rail{grid-column:auto;grid-row:auto}
-    .tab-rail{position:static;flex-direction:row;width:auto;padding:0;overflow:hidden}
-    .rail-cap{display:none}
-    .tab-btn{flex:1;min-width:0;padding:10px 12px;border-left:none;border-bottom:3px solid transparent}
-    .tab-btn.active{border-bottom-color:var(--brand)}
+    :root{--w2:64px;--w4:118px;--w5:190px}
   }
 
   @media(max-width:900px){
-    h1{font-size:22px}.docref{text-align:left}
+    .wrap{padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+    .masthead{padding-top:18px}
+    h1{font-size:23px}
+    .article{flex:1 1 100%;min-width:0}
+    /* thead is hidden here, so the tall filter block need not stay pinned */
+    .controls,.controls-simple{position:static}
+    .controls{grid-template-columns:minmax(0,1fr)}
+    .shape{align-items:flex-start}
+    .shapecap{text-align:left}
+    .searchrow .fgroup{padding-left:0;border-left:none}
+    input[type=search]{flex-basis:100%;max-width:none}
     table{table-layout:auto}
     thead{display:none}
     table,tbody,tr,td{display:block;width:100%}
-    tbody tr{border:1px solid var(--line2);border-radius:10px;margin-bottom:12px;padding:6px 2px}
-    tbody td{border:none;padding:6px 12px}
-    tbody td::before{content:attr(data-l);font-size:10px;letter-spacing:.8px;
-      text-transform:uppercase;color:var(--soft);display:block;margin-bottom:3px;font-weight:600}
+    tbody tr{border-bottom:1px solid var(--rule-2);padding:8px 0}
+    tbody td{border:none;padding:5px 0}
+    tbody tr:hover td{background:none}
+    tbody td::before{content:attr(data-l);font-size:10px;letter-spacing:.08em;
+      text-transform:uppercase;color:var(--muted);display:block;margin-bottom:2px;font-weight:600}
     .num{text-align:left}
     .tablescroll{max-height:none;overflow:visible}
-    .masthead .sub{padding-left:0;border-left:none}
-    .shape{max-width:none;align-items:flex-start;text-align:left}
-    .searchrow .fgroup{padding-left:0;border-left:none}
-    .shape{margin-left:0}
-    .pc-group-row td{display:block}
+    .pc-group-row td{display:block;padding:8px 10px}
+    .pc-ex-specs{display:table;flex:1 1 100%;width:100%;min-width:0}
+    .pc-ex-specs tbody{display:table-row-group;width:auto}
+    .pc-ex-specs tr{display:table-row;border:none;padding:0}
+    .pc-ex-specs td{display:table-cell;width:auto;border-bottom:1px solid var(--rule);padding:5px 12px 5px 0}
+    .pc-ex-specs td::before{content:none}
   }
+  @media(max-width:560px){
+    .pc-ex-segs{flex-wrap:wrap}
+    .tabs{flex-wrap:wrap;column-gap:22px}
+    .tab-btn{padding:10px 0 8px}
+  }
+  @media(prefers-reduced-motion:reduce){*{transition:none!important}}
 </style>
 </head>
 <body>
@@ -221,68 +243,59 @@
 
   <header>
     <div class="masthead">
-      <h1>Philips Part Numbering <span class="nc">Reference</span></h1>
-      <div class="sub">Historical coding systems used by Philips &mdash; from the pre-12NC
-        product codes to the 12-digit numbering standard introduced in 1964.</div>
+      <div class="masthead-title">
+        <h1>Philips Part Numbering Reference</h1>
+        <p class="sub">Historical coding systems used by Philips &mdash; from the pre-12NC
+          product codes to the 12-digit numbering standard introduced in 1964.</p>
+      </div>
+      <aside class="article" id="article" aria-label="Companion article" hidden>
+        <span class="article-kicker"><svg class="li-mark" viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path fill="#0A66C2" d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 1 1 0-4.125 2.062 2.062 0 0 1 0 4.125zM7.119 20.452H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>Companion article &middot; LinkedIn</span>
+        <a class="article-title" id="article-link" target="_blank" rel="noopener"></a>
+        <p class="article-desc" id="article-desc" hidden></p>
+      </aside>
     </div>
   </header>
 
-  <div class="layout">
-  <nav class="tab-rail" role="tablist" aria-label="Coding systems">
-    <div class="rail-cap">Coding systems</div>
-    <button class="tab-btn active" id="btn-12nc" role="tab" aria-selected="true" onclick="location.hash='12nc'">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M3 14.5h18M9 9v11"/></svg>
-      12NC Group Codes</button>
-    <button class="tab-btn" id="btn-product" role="tab" aria-selected="false" onclick="location.hash='product'">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7l7-4"/><circle cx="15.5" cy="13.5" r="3"/><path d="M6.5 11h3M6.5 14h3M6.5 17h3"/></svg>
-      Pre-12NC Product Codes</button>
-    <button class="tab-btn" id="btn-factory" role="tab" aria-selected="false" onclick="location.hash='factory'">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 20V10l5 3V10l5 3V10l5 3V4h3v16z"/><path d="M3 20h18"/></svg>
-      Pre-12NC Factory Codes</button>
+  <nav class="tabs" role="tablist" aria-label="Coding systems">
+    <button class="tab-btn active" id="btn-12nc" role="tab" aria-selected="true" onclick="location.hash='12nc'">12NC Group Codes</button>
+    <button class="tab-btn" id="btn-product" role="tab" aria-selected="false" onclick="location.hash='product'">Pre-12NC Product Codes</button>
+    <button class="tab-btn" id="btn-factory" role="tab" aria-selected="false" onclick="location.hash='factory'">Pre-12NC Factory Codes</button>
   </nav>
+
   <main>
 
   <!-- ══ TAB: 12NC GROUP CODES ══════════════════════════════════════ -->
   <div id="tab-12nc" class="tab-panel active">
 
-    <div class="tab-intro">
-      <div class="sub">A reference for the leading digits of the Philips 12-digit numbering
-        code &mdash; main group, centre of issue, and subgroup &mdash; merged from the concern
-        standardization records and cross-checked against parts seen in use.</div>
-      <div class="docref">SOURCES<br>
-        <b>UCB 22-00-74/1</b> &middot; May 1964<br>
-        <b>UT-D 1056 pt.3</b> &middot; Oct 1968<br>
-        <span style="color:var(--line2)">Philips Concern Standardization Dept.</span>
-      </div>
-    </div>
-
     <div class="controls" id="ctrl-12nc">
-      <div class="searchrow">
-        <input type="search" id="q" placeholder="Search anything &mdash; code, keyword, country, ASML, Krefeld, resistors&hellip;" autocomplete="off">
-        <span class="count" id="count"></span>
-        <div class="fgroup">
-          <span class="flabel">UT-D 1056 pt.3 (1968)</span>
-          <span class="chip accent" id="fCountry" aria-pressed="false" role="button" tabindex="0">Baseline of Centre of Issue</span>
-          <span class="finfo" tabindex="0" title="Gives the Centre of Issue Baseline published on UT-D 1056 PT.3 (1968) &mdash; the raw 1968 country list." aria-label="Gives the Centre of Issue Baseline published on UT-D 1056 PT.3 (1968) &mdash; the raw 1968 country list.">i</span>
+      <div class="ctrl-main">
+        <div class="searchrow">
+          <input type="search" id="q" placeholder="Search anything &mdash; code, keyword, country, resistors&hellip;" autocomplete="off" aria-label="Search 12NC group codes">
+          <span class="count" id="count"></span>
+          <div class="fgroup">
+            <span class="flabel">UT-D 1056 pt.3 (1968)</span>
+            <span class="chip accent" id="fCountry" aria-pressed="false" role="button" tabindex="0">Baseline of Centre of Issue</span>
+            <span class="finfo" tabindex="0" title="Gives the Centre of Issue Baseline published on UT-D 1056 PT.3 (1968) &mdash; the raw 1968 country list." aria-label="Gives the Centre of Issue Baseline published on UT-D 1056 PT.3 (1968) &mdash; the raw 1968 country list.">i</span>
+          </div>
+          <div class="fgroup">
+            <span class="flabel">Author note</span>
+            <span class="chip" id="fNotes" aria-pressed="false" role="button" tabindex="0">Has author note</span>
+          </div>
         </div>
-        <div class="fgroup">
-          <span class="flabel">Author note</span>
-          <span class="chip" id="fNotes" aria-pressed="false" role="button" tabindex="0">Has author note</span>
+        <div class="filterbar">
+          <div class="fgroup">
+            <span class="flabel">Main group</span>
+            <div class="fbtns" id="mainFilters"></div>
+          </div>
         </div>
       </div>
-      <div class="filterbar">
-        <div class="fgroup">
-          <span class="flabel">Main group</span>
-          <div class="fbtns" id="mainFilters"></div>
-        </div>
-        <div class="shape" id="shape">
-          <div><span class="d" data-i="0">N</span><span class="d" data-i="1">N</span><span class="d" data-i="2">N</span><span class="d" data-i="3">N</span><span class="sep">&middot;</span><span class="d" data-i="4">N</span><span class="d" data-i="5">N</span><span class="d" data-i="6">N</span><span class="sep">&middot;</span><span class="d" data-i="7">N</span><span class="d" data-i="8">N</span><span class="d" data-i="9">N</span><span class="d" data-i="10">N</span><span class="d" data-i="11">N</span></div>
-          <span class="shapecap" id="shapecap">every row highlights the positions it defines</span>
-        </div>
+      <div class="shape" id="shape">
+        <div class="shape-cells"><span class="d" data-i="0">N</span><span class="d" data-i="1">N</span><span class="d" data-i="2">N</span><span class="d" data-i="3">N</span><span class="sep"></span><span class="d" data-i="4">N</span><span class="d" data-i="5">N</span><span class="d" data-i="6">N</span><span class="sep"></span><span class="d" data-i="7">N</span><span class="d" data-i="8">N</span><span class="d" data-i="9">N</span><span class="d" data-i="10">N</span><span class="d" data-i="11">N</span></div>
+        <span class="shapecap" id="shapecap">every row highlights the positions it defines</span>
       </div>
     </div>
 
-    <div class="card">
+    <div class="sheet">
       <div class="tablescroll">
         <table>
           <colgroup>
@@ -320,16 +333,6 @@
 
   <!-- ══ TAB: PRE-12NC PRODUCT CODES ═══════════════════════════════ -->
   <div id="tab-product" class="tab-panel">
-
-    <div class="tab-intro">
-      <div class="sub">The alphanumeric coding system Philips used for consumer electronics
-        before the 12NC &mdash; letters encode product type, production origin, and power supply;
-        a digit indicates price class; a two-digit group usually gives the year.</div>
-      <div class="docref">SOURCE<br>
-        <b>Philips Consumer Electronics</b><br>
-        <span style="color:var(--line2)">Pre-12NC product coding</span>
-      </div>
-    </div>
 
     <div class="pc-layout">
     <div class="pc-left">
@@ -417,12 +420,12 @@
     <div class="pc-right">
     <div class="controls-simple" id="ctrl-product">
       <div class="searchrow">
-        <input type="search" id="pc-q" placeholder="Search code, position, meaning&hellip;" autocomplete="off">
+        <input type="search" id="pc-q" placeholder="Search code, position, meaning&hellip;" autocomplete="off" aria-label="Search pre-12NC product codes">
         <span class="count" id="pc-count"></span>
       </div>
     </div>
 
-    <div class="card">
+    <div class="sheet">
       <div class="tablescroll">
         <table style="table-layout:auto">
           <colgroup>
@@ -452,16 +455,6 @@
 
   <!-- ══ TAB: PRE-12NC FACTORY CODES ═══════════════════════════════ -->
   <div id="tab-factory" class="tab-panel">
-
-    <div class="tab-intro">
-      <div class="sub">Before the 12NC, Philips factories identified the parts they made &mdash; such as
-        tuner units &mdash; with their own factory codes: a letter prefix for the factory followed by
-        number groups. The same part could carry a different code depending on where it was made.</div>
-      <div class="docref">SOURCE<br>
-        <b>Author&rsquo;s factory-code notes</b><br>
-        <span style="color:var(--line2)">Pre-12NC factory coding</span>
-      </div>
-    </div>
 
     <div class="pc-layout">
     <div class="pc-left">
@@ -517,12 +510,12 @@
     <div class="pc-right">
     <div class="controls-simple" id="ctrl-factory">
       <div class="searchrow">
-        <input type="search" id="fc-q" placeholder="Search code, country, factory&hellip;" autocomplete="off">
+        <input type="search" id="fc-q" placeholder="Search code, country, factory&hellip;" autocomplete="off" aria-label="Search pre-12NC factory codes">
         <span class="count" id="fc-count"></span>
       </div>
     </div>
 
-    <div class="card">
+    <div class="sheet">
       <div class="tablescroll">
         <table style="table-layout:auto">
           <colgroup>
@@ -551,11 +544,32 @@
   </div><!-- /tab-factory -->
 
   </main>
-  </div><!-- /layout -->
 
 </div><!-- /wrap -->
 
 <script>
+// ── Companion article (LinkedIn) ────────────────────────────────────
+// The note in the masthead stays hidden while `url` is empty. To publish it,
+// paste the article's full LinkedIn address into `url`. `title` and
+// `description` are optional; without a title the link reads "Read the article".
+const ARTICLE={
+  url:'https://www.linkedin.com/pulse/draft/preview/7505987027604103168',
+  title:'The Philips 12NC System',
+  description:''
+};
+(function renderArticle(){
+  if(!/^https:\/\//.test(ARTICLE.url))return;
+  const link=document.getElementById('article-link');
+  link.href=ARTICLE.url;
+  link.textContent=ARTICLE.title||'Read the article';
+  link.insertAdjacentHTML('beforeend','<span class="arrow" aria-hidden="true">&#8599;</span>');
+  if(ARTICLE.description){
+    const p=document.getElementById('article-desc');
+    p.textContent=ARTICLE.description;p.hidden=false;
+  }
+  document.getElementById('article').hidden=false;
+})();
+
 // ── Shared CSV helpers ──────────────────────────────────────────────
 let DATA=[];
 let PC_DATA=[];
@@ -632,7 +646,8 @@ async function init(){
 }
 
 // ── 12NC table ──────────────────────────────────────────────────────
-const MAINS=['Articles and Sketches','Articles for Works-Mechanization','Articles in General Use','Commercial Products','Materials','Production Articles'];
+// Ordered by main-group number (digits 1-2), not alphabetically.
+const MAINS=['Materials','Articles in General Use','Production Articles','Articles for Works-Mechanization','Articles and Sketches','Commercial Products'];
 const state={q:'',main:null,country:false,notes:false};
 
 const mf=document.getElementById('mainFilters');
@@ -654,7 +669,7 @@ function codeShape(d){
   let h='';
   for(let i=0;i<12;i++){
     const ch=bare[i]||'N',pinned=d.active.includes(i);
-    if(i===4||i===7)h+=' ';
+    if(i===4||i===7)h+='<span class="gap"></span>';
     h+='<span class="'+(pinned?'p':'g')+'">'+ch+'</span>';
   }
   return h;
